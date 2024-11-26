@@ -1,0 +1,2 @@
+class FearsDocumentsController < ApplicationController
+end

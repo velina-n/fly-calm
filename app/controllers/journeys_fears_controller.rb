@@ -1,0 +1,2 @@
+class JourneysFearsController < ApplicationController
+end
