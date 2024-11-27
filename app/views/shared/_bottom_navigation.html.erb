@@ -1,0 +1,37 @@
+<%# app/views/shared/_bottom_navigation_html.erb %>
+<footer class="bottom-navigation">
+  <%= link_to home_path, class: "nav-item" do %>
+    <div class="icon">
+      <%= image_tag "home/nav-home.svg", alt: "Accueil" %>
+    </div>
+    <span class="fw-bold">Accueil</span>
+  <% end %>
+
+  <%= link_to explorer_path, class: "nav-item" do %>
+    <div class="icon">
+      <%= image_tag "home/nav-explorer.svg", alt: "Explorer" %>
+    </div>
+    <span class="fw-bold">Explorer</span>
+  <% end %>
+
+  <%= link_to consulter_path, class: "nav-item" do %>
+    <div class="icon">
+      <%= image_tag "home/nav-consulter.svg", alt: "Consulter" %>
+    </div>
+    <span class="fw-bold">Consulter</span>
+  <% end %>
+
+  <%= link_to relaxer_path, class: "nav-item" do %>
+    <div class="icon">
+      <%= image_tag "home/nav-relaxation.svg", alt: "Se relaxer" %>
+    </div>
+    <span class="fw-bold">Se relaxer</span>
+  <% end %>
+
+  <%= link_to favoris_path, class: "nav-item" do %>
+    <div class="icon">
+      <%= image_tag "home/nav-favoris.svg", alt: "Favoris" %>
+    </div>
+    <span class="fw-bold">Favoris</span>
+  <% end %>
+</footer>

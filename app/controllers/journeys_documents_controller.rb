@@ -37,7 +37,7 @@ class JourneysDocumentsController < ApplicationController
   # Soumettre une réponse pour le quizz
   def answer
     # Récupérer l'ID de la réponse sélectionnée depuis le formulaire
-    selected_answer_id = params[:journeys_document][:answer_id]
+    selected_answer_id = journeys_document_params[:answer_id]
 
     # Logique pour traiter la réponse soumise (ici, uniquement affichage d'un message)
     if selected_answer_id.present?
@@ -46,8 +46,8 @@ class JourneysDocumentsController < ApplicationController
       flash[:alert] = "Aucune réponse sélectionnée."
     end
 
-    # Rediriger vers la page du document
-    redirect_to @journeys_document
+    # Rediriger vers le dashboard des documents (journeys#show)
+    redirect_to journey_path(@journeys_document.journey_id), notice: "Retour au dashboard des documents."
   end
 
   private
@@ -59,6 +59,6 @@ class JourneysDocumentsController < ApplicationController
 
   # Filtrer les paramètres autorisés
   def journeys_document_params
-    params.require(:journeys_document).permit(:status)
+    params.require(:journeys_document).permit(:answer_id, :status)
   end
 end

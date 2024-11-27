@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   # Page d'accueil
   root to: "pages#home", as: :home
 
+  # Gestion des icones de la barre de navigation
+  get "/explorer", to: "pages#explorer", as: :explorer
+  get "/consulter", to: "pages#consulter", as: :consulter
+  get "/relaxer", to: "pages#relaxer", as: :relaxer
+  get "/favoris", to: "pages#favoris", as: :favoris
+
   # Gestion des programmes (Journeys)
   resources :journeys, only: [:new, :create, :show] do
     # Gestion des peurs associées aux programmes
@@ -31,4 +37,6 @@ Rails.application.routes.draw do
 
   # Gestion des peurs
   resources :fears, only: [:index, :show, :create, :update, :destroy]
+
+
 end
