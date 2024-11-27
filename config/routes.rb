@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   end
   resources :journeys_documents, only: [:show, :update], controller: :journeys_documents do
     member do
-      get :quiz # Route pour afficher le quiz à la fin d'un document
+      get :quizz # Route pour afficher le quizz à la fin d'un document
+      patch :answer # Route pour soumettre une réponse à un quizz
     end
   end
 

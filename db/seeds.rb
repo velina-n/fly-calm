@@ -23,65 +23,19 @@ accident = Fear.create!(name: "Peur de l'accident")
 enfermement = Fear.create!(name: "Peur de l'enfermement")
 panique = Fear.create!(name: "Peur de paniquer")
 
-# fears = Fear.create!([
-#   { name: "Peur de l'altitude" },
-#   { name: "Peur de l'accident" },
-#   { name: "Peur de l'enfermement" },
-#   { name: "Peur de paniquer" }
-# ])
 
-
-# # Création des voyages
-# journeys = Journey.create!([
-#   { user: users.first, status: :ongoing },
-#   { user: users.last, status: :completed }
-# ])
-
-# # Association des peurs aux voyages
-# JourneysFear.create!([
-#   { journey: journeys.first, fear: fears.first },
-#   { journey: journeys.last, fear: fears.first }
-# ])
 
 doc_alt_1 = altitude.documents.create!(kind: 'article', title: 'Relaxation Techniques', content: 'How to relax during a flight.', url: 'https://example.com/article1')
 doc_alt_2 = altitude.documents.create!(kind: 'video', title: 'Introduction to Flying', content: 'Video content explaining flight safety.', url: 'https://example.com/video1')
 
-# Création des documents
-# documents = Document.create!([
-#   { kind: 'video', title: 'Introduction to Flying', content: 'Video content explaining flight safety.', url: 'https://example.com/video1'},
-#   { kind: 'article', title: 'Relaxation Techniques', content: 'How to relax during a flight.', url: 'https://example.com/article1' }
-# ])
-
-# altitude.documents << documents[0]
-
-# # Association des documents à la peur
-# FearsDocument.create!([
-#   { fear: fears.first, document: documents[0] },
-#   { fear: fears.first, document: documents[1] }
-# ])
-
-# Association des documents aux voyages
-# JourneysDocument.create!([
-#   { journey: journeys.first, document: documents[0], position: 1, status: :pending },
-#   { journey: journeys.first, document: documents[1], position: 2, status: :pending }
-# ])
 
 question = Question.create!(text: 'What scares you the most about flying?', document: doc_alt_1)
 question.answers.create!(text: 'I feel like the plane might crash.', right: true)
 question.answers.create!(text: 'fdsf fdsf fsd fdsfsd.')
+question.answers.create!(text: 'cest pas la bonne réponse ou peut-être que oui.')
 
 
 question = Question.create!(text: 'How do you usually relax during a flight?', document: doc_alt_2)
 question.answers.create!(text: 'I try to focus on my breathing.', right: true)
 question.answers.create!(text: 'fdsf fdsf fsd fdsfsd.')
-# Création des questions
-# questions = Question.create!([
-#   { text: 'What scares you the most about flying?', document: documents[0] },
-#   { text: 'How do you usually relax during a flight?', document: documents[1] }
-# ])
-
-# # Création des réponses
-# Answer.create!([
-#   { text: 'I feel like the plane might crash.', question: questions.first },
-#   { text: 'I try to focus on my breathing.', question: questions.last }
-# ])
+question.answers.create!(text: 'cest pas la bonne réponse ou peut-être que oui.')

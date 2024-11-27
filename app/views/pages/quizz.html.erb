@@ -1,7 +1,8 @@
+<%# app/views/pages/quizz.html.erb %>
 <h1>Quizz : <%= @journeys_document.document.title %></h1>
 <p><%= @question.text %></p>
 
-<%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, local: true do |form| %>
+<%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch do |form| %>
   <% @question.answers.each do |answer| %>
     <div class="form-check">
       <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}" %>
