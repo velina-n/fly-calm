@@ -1,39 +1,45 @@
 <%# app/views/journeys/new.html.erb %>
-<div class="questionnaire-page">
-  <!-- Retour (icône flèche) -->
-  <div class="back-button">
-    <%= link_to "←", root_path, class: "back-link" %>
-  </div>
-
-  <!-- Titre principal -->
-  <div class="header">
-    <h1>Explorons ensemble <br> tes <span class="highlight">craintes en vol</span> 😊</h1>
-  </div>
-
-  <!-- Image d'illustration -->
-  <div class="illustration">
-    <img src="/assets/plane_illustration.jpg" alt="Illustration de vol en avion" />
-  </div>
-
-  <!-- Texte explicatif -->
-  <div class="instructions">
-    <p>Aide nous à mieux <span class="highlight">personnaliser</span> le contenu de <span class="highlight">ton programme</span></p>
-  </div>
-
-  <!-- Formulaire -->
-  <%= form_with model: @journey, url: journeys_path, method: :post, class: "form" do |f| %>
-    <div class="fears-list">
-      <% @fears.each do |fear| %>
-        <div class="fear-item">
-          <%= check_box_tag 'journey[fear_ids][]', fear.id, false, id: "fear_#{fear.id}" %>
-          <%= label_tag "fear_#{fear.id}", fear.name %>
+<div class='container d-flex justify-content-center align-items-center text-center" style="min-height: 100vh;'>
+  <div class='row'>
+    <div class='col'>
+      <div class="questionnaire-page">
+        <!-- Retour (icône flèche) -->
+        <div class="back-button">
+          <%= link_to "←", root_path, class: "back-link" %>
         </div>
-      <% end %>
-    </div>
 
-    <!-- Bouton de soumission -->
-    <div class="actions">
-      <%= f.submit "Soumettre", class: "btn btn-primary" %>
+        <!-- Titre principal -->
+        <div class="header text-center">
+          <h1>Explorons ensemble <br> tes <span class="highlight">craintes en vol</span> 😊</h1>
+        </div>
+
+        <!-- Image d'illustration -->
+        <div class="illustration">
+          <img src="/assets/plane_illustration.jpg" alt="Illustration de vol en avion" />
+        </div>
+
+        <!-- Texte explicatif -->
+        <div class="instructions">
+          <p>Aide nous à mieux <span class="highlight">personnaliser</span> le contenu de <span class="highlight">ton programme</span></p>
+        </div>
+
+        <!-- Formulaire -->
+        <%= form_with model: @journey, url: journeys_path, method: :post, class: "form" do |f| %>
+          <div class="fears-list">
+            <% @fears.each do |fear| %>
+              <div class="fear-item">
+                <%= check_box_tag 'journey[fear_ids][]', fear.id, false, id: "fear_#{fear.id}" %>
+                <%= label_tag "fear_#{fear.id}", fear.name %>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Bouton de soumission -->
+          <div class="actions">
+            <%= f.submit "Soumettre", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>
