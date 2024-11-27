@@ -1,3 +1,4 @@
+<%# app/views/journeys_documents/show.html.erb %>
 <h1><%= @journeys_document.document.title %></h1>
 <p><%= @journeys_document.document.content %></p>
 
@@ -9,7 +10,7 @@
     <%= form.submit "Marquer comme terminé", class: "btn btn-primary" %>
   <% end %>
 <% elsif @journeys_document.completed? %>
-  <%= link_to "Passer au quiz", quiz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
+  <%= link_to "Passer au quizz", quizz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
 <% elsif @journeys_document.quizz_done? %>
-  <p>Quiz terminé ! Félicitations 🎉</p>
+  <p>Quizz terminé ! Félicitations 🎉</p>
 <% end %>
