@@ -41,6 +41,8 @@ class JourneysController < ApplicationController
     @journey = Journey.find(params[:id])
     # Charge les contenus associés au programme
     @documents = @journey.documents.includes(:journeys_documents)
+    # Calcul du pourcentage de progression
+    @progress = @journey.progress_percentage
     # Vue associée automatiquement rendue : app/views/journeys/show.html.erb
   end
 
@@ -59,4 +61,3 @@ class JourneysController < ApplicationController
     end
   end
 end
-
