@@ -1,0 +1,53 @@
+<div class="quizz-page">
+  <header class="quizz-header">
+    <h1>QUIZZ</h1>
+  </header>
+
+  <main class="quizz-content">
+    <div class="quizz-image">
+      <%= image_tag "quizz_documents/quiz.png", alt: "Image Quizz", class: "quizz-image-img" %>
+    </div>
+    <h2>Comment calmer <span class="highlight">une crise de panique</span> ?</h2>
+    <p>Une seule réponse à cocher</p>
+
+    <form class="quizz-form">
+      <div class="quizz-option">
+        <input type="radio" id="option1" name="quizz" value="coherence-cardiaque">
+        <label for="option1">Faire de la cohérence cardiaque</label>
+      </div>
+      <div class="quizz-option">
+        <input type="radio" id="option2" name="quizz" value="appeler-pompiers">
+        <label for="option2">Appeler les pompiers</label>
+      </div>
+      <div class="quizz-option">
+        <input type="radio" id="option3" name="quizz" value="boire-alcool">
+        <label for="option3">Boire de l'alcool</label>
+      </div>
+      <button type="submit" class="btn-submit">Soumettre</button>
+    </form>
+  </main>
+
+  <!-- Barre de navigation -->
+  <footer class="bottom-navigation">
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/home-icon.png') %>" alt="Accueil"> %>
+      <span>Accueil</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/explorer-icon.png') %>" alt="Explorer"> %>
+      <span>Explorer</span>
+    </a>
+    <a href="#" class="nav-item active">
+      <%# <img src="<%= asset_path('icons/consult-icon.png') %>" alt="Consulter"> %>
+      <span>Consulter</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/relax-icon.png') %>" alt="Se relaxer"> %>
+      <span>Se relaxer</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/favorites-icon.png') %>" alt="Favoris"> %>
+      <span>Favoris</span>
+    </a>
+  </footer>
+</div>

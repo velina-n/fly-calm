@@ -4,4 +4,5 @@ class JourneysDocument < ApplicationRecord
   belongs_to :document
 
   enum status: [:pending, :completed, :quizz_done]
+  validates :position, presence: true
 end

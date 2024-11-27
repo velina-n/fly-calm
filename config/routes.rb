@@ -1,19 +1,23 @@
+# config/routes.rb
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :journeys, only: [:show, :new, :create]
-  resources :journeys_documents, only: [:show, :update] do
-    member do
-      get :quiz
+  devise_for :users # Gestion des utilisateurs avec Devise
+
+  root to: "pages#home" # Page d'accueil
+
+  resources :journeys do
+    resources :journeys_documents, only: [:show, :update] do
+      member do
+        get :quiz # Route pour afficher le quiz
+      end
     end
+    resources :journeys_fears, only: [:index, :create, :destroy]
   end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  resources :documents do
+    resources :questions, only: [:index, :show]
+  end
 
-  # Defines the root path route ("/")
-  # root "posts#index"
-
+  resources :fears
+  resources :questions
+  resources :answers
 end

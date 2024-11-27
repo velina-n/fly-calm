@@ -1,0 +1,26 @@
+<%= form_with model: [@journeys_document, @question], local: true do |form| %>
+  <% if @question.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@question.errors.count, 'erreur') %> :</h2>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "Titre de la question" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content, "Contenu de la question" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,3 +1,4 @@
+<%# app/views/pages/home.html.erb %>
 <div class="home-page">
   <header class="header">
     <h2>Bonjour <span class="highlight"><%= @user_name %></span> !</h2>
@@ -8,9 +9,32 @@
     <h1>Bienvenue dans <span class="brand">Fly Calm</span> !</h1>
     <p>Transformons ensemble ta peur de l’avion en <span class="highlight">liberté</span> de voler.</p>
     <div class="illustration">
-      <%# mettre une image %>
       <%= image_tag "home/illustration.png", alt: "Illustration de voyage" %>
     </div>
     <%= link_to 'Commencer', new_journey_path, class: 'btn btn-primary' %>
   </main>
+
+  <!-- Barre de navigation en bas de la page -->
+  <footer class="bottom-navigation">
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/Accueil.svg') %>" alt="Accueil"> %>
+      <span>Accueil</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/explorer-icon.png') %>" alt="Explorer"> %>
+      <span>Explorer</span>
+    </a>
+    <a href="#" class="nav-item active">
+      <%# <img src="<%= asset_path('icons/consult-icon.png') %>" alt="Consulter"> %>
+      <span>Consulter</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/relax-icon.png') %>" alt="Se relaxer"> %>
+      <span>Se relaxer</span>
+    </a>
+    <a href="#" class="nav-item">
+      <%# <img src="<%= asset_path('icons/favorites-icon.png') %>" alt="Favoris"> %>
+      <span>Favoris</span>
+    </a>
+  </footer>
 </div>
