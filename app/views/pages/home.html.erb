@@ -9,7 +9,7 @@
     <p>Transformons ensemble ta peur de l’avion en <span class="highlight">liberté</span> de voler.</p>
     <div class="illustration">
       <%# mettre une image %>
-      <img src="illustration.jpg" alt="Illustration de voyage" />
+      <%= image_tag "home/illustration.png", alt: "Illustration de voyage" %>
     </div>
     <%= link_to 'Commencer', new_journey_path, class: 'btn btn-primary' %>
   </main>
