@@ -1,0 +1,21 @@
+<h1>Quiz pour : <%= @journeys_document.document.title %></h1>
+
+<% if @question %>
+  <h2><%= @question.text %></h2>
+
+  <form>
+    <% @question.answers.each do |answer| %>
+      <div>
+        <input type="radio" id="answer_<%= answer.id %>" name="answer" value="<%= answer.id %>">
+        <label for="answer_<%= answer.id %>"><%= answer.text %></label>
+      </div>
+    <% end %>
+
+    <%= form_with model: @journeys_document, url: journeys_document_path(@journeys_document), method: :patch do |form| %>
+      <%= form.hidden_field :status, value: "quizz_done" %>
+      <%= form.submit "Soumettre le quiz", class: "btn btn-primary" %>
+    <% end %>
+  </form>
+<% else %>
+  <p>Aucune question associée à ce document.</p>
+<% end %>

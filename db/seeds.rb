@@ -17,15 +17,18 @@ puts "Database reset completed."
 puts "Creating users..."
 
 users = User.create!([
-  { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: "123456" },
+  { first_name: 'Yves', last_name: 'Dupont', email: 'yves@example.com', password: "123456" },
   { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: "123456" }
 ])
 puts "Users created: #{User.count}"
 
 # Création des peurs
 fears = Fear.create!([
-  { name: 'Fear of Flying' }
-])
+#   { name: 'Peur de l'attitude' }
+#   peur de l'accident
+#   peur de l'enfermement
+#   peur de l'accident
+# ])
 
 puts "Fears created: #{Fear.count}"
 # Création des voyages

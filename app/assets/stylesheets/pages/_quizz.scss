@@ -1,0 +1,138 @@
+// Styles pour la page Quizz
+.quizz-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .quizz-header {
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
+  }
+
+  .quizz-content {
+    margin-top: 20px;
+    text-align: center;
+
+    .quizz-image-img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 10px;
+      color: #333;
+
+      .highlight {
+        color: #007bff;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .quizz-form {
+      margin-top: 20px;
+      text-align: left;
+
+      .quizz-option {
+        margin-bottom: 15px;
+
+        input[type="radio"] {
+          margin-right: 10px;
+        }
+
+        label {
+          font-size: 14px;
+          color: #555;
+        }
+      }
+
+      .btn-submit {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+// Barre de navigation (réutilisable)
+.bottom-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .nav-item {
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+
+    &.active {
+      color: #00b894;
+
+      img {
+        border: 2px solid #00b894;
+        border-radius: 50%;
+        padding: 2px;
+      }
+    }
+  }
+}
+
+// Styles responsive pour mobile
+@media (max-width: 768px) {
+  .quizz-page {
+    padding: 10px;
+  }
+
+  .quizz-content {
+    .quizz-image-img {
+      max-width: 250px;
+    }
+  }
+
+  .bottom-navigation {
+    padding: 5px 0;
+
+    .nav-item img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .nav-item {
+      font-size: 10px;
+    }
+  }
+}

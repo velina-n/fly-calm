@@ -1,0 +1,13 @@
+<h1>Questions pour le document : <%= @journeys_document.title %></h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li>
+      <%= link_to question.title, journeys_document_question_path(@journeys_document, question) %>
+      (<%= link_to 'Modifier', edit_journeys_document_question_path(@journeys_document, question) %> |
+      <%= link_to 'Supprimer', journeys_document_question_path(@journeys_document, question), method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>)
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Ajouter une question', new_journeys_document_question_path(@journeys_document), class: 'btn btn-primary' %>
