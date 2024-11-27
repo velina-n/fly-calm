@@ -4,6 +4,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @document = @question.document # Charger le document associé
   end
 end

@@ -4,7 +4,7 @@ class Document < ApplicationRecord
   has_many :fears, through: :fears_documents
   has_many :journeys_documents
   has_many :journeys, through: :journeys_documents
-  has_one :questions
+  has_one :question
 
   enum kind: [:article, :video, :audio]
 

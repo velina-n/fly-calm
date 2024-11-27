@@ -2,22 +2,32 @@
 Rails.application.routes.draw do
   devise_for :users # Gestion des utilisateurs avec Devise
 
-  root to: "pages#home" # Page d'accueil
+  # Page d'accueil
+  root to: "pages#home", as: :home
 
-  resources :journeys do
-    resources :journeys_documents, only: [:show, :update] do
-      member do
-        get :quiz # Route pour afficher le quiz
-      end
-    end
+  # Gestion des programmes (Journeys)
+  resources :journeys, only: [:new, :create, :show] do
+    # Gestion des peurs associées aux programmes
     resources :journeys_fears, only: [:index, :create, :destroy]
+
+    # Gestion des documents associés à un programme
+  end
+  resources :journeys_documents, only: [:show, :update], controller: :journeys_documents do
+    member do
+      get :quiz # Route pour afficher le quiz à la fin d'un document
+    end
   end
 
-  resources :documents do
+  # Gestion des documents
+  resources :documents, only: [:index, :show] do
+    # Questions associées à un document
     resources :questions, only: [:index, :show]
   end
 
-  resources :fears
-  resources :questions
-  resources :answers
+  # Gestion des questions et réponses globales
+  resources :questions, only: [:show]
+  resources :answers, only: [:index, :show]
+
+  # Gestion des peurs
+  resources :fears, only: [:index, :show, :create, :update, :destroy]
 end
