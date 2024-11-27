@@ -1,11 +1,11 @@
 <%# app/views/journeys/new.html.erb %>
-<div class='container d-flex justify-content-center align-items-center text-center" style="min-height: 100vh;'>
+<div class='container d-flex justify-content-center align-items-center text-center' style="min-height: 100vh;">
   <div class='row'>
     <div class='col'>
       <div class="questionnaire-page">
         <!-- Retour (icône flèche) -->
         <div class="back-button">
-          <%= link_to "←", root_path, class: "back-link" %>
+          <%= link_to "←", home_path, class: "back-link" %>
         </div>
 
         <!-- Titre principal -->
@@ -24,20 +24,9 @@
         </div>
 
         <!-- Formulaire -->
-        <%= form_with model: @journey, url: journeys_path, method: :post, class: "form" do |f| %>
-          <div class="fears-list">
-            <% @fears.each do |fear| %>
-              <div class="fear-item">
-                <%= check_box_tag 'journey[fear_ids][]', fear.id, false, id: "fear_#{fear.id}" %>
-                <%= label_tag "fear_#{fear.id}", fear.name %>
-              </div>
-            <% end %>
-          </div>
-
-          <!-- Bouton de soumission -->
-          <div class="actions">
-            <%= f.submit "Soumettre", class: "btn btn-primary" %>
-          </div>
+        <%= simple_form_for @journey do |f| %>
+          <%= f.association :fears, as: :check_boxes, include_blank: false, include_hidden: false %>
+          <%= f.submit "Soumettre", class: "btn btn-primary mt-4" %>
         <% end %>
       </div>
     </div>

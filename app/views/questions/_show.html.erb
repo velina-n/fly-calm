@@ -1,20 +1,27 @@
-<h1><%= @journeys_document.document.title %></h1>
-<p><%= @journeys_document.document.description %></p>
+<div class='container'>
+  <div class="header text-center">
+    <h1>Ton programme personnalisé</h1>
+    <p>Voici une liste de contenus adaptés à tes <span class="highlight">craintes</span> :</p>
+  </div>
 
-<p>Statut actuel : <%= @journeys_document.status.humanize %></p>
-
-<% if @journeys_document.pending? %>
-  <%= form_with model: @journeys_document, url: journeys_document_path(@journeys_document), method: :patch do |form| %>
-    <%= form.hidden_field :status, value: "completed" %>
-    <%= form.submit "Marquer comme terminé", class: "btn btn-primary" %>
+  <% if @documents.any? %>
+    <div class="documents-list">
+      <% @documents.each do |document| %>
+        <div class="document-item">
+          <h3><%= document.title %></h3>
+          <p><%= document.content %></p>
+          <% if document.kind == "video" %>
+            <video controls>
+              <source src="<%= document.url %>" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture des vidéos.
+            </video>
+          <% elsif document.kind == "article" %>
+            <a href="<%= document.url %>" target="_blank" class="btn btn-link">Lire l'article</a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Aucun document n'est disponible pour vos peurs sélectionnées.</p>
   <% end %>
-<% elsif @journeys_document.completed? %>
-  <%= link_to "Passer au quiz", quiz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
-<% elsif @journeys_document.quizz_done? %>
-  <p>Quiz terminé ! Félicitations 🎉</p>
-<% end %>
-
-<% if @question %>
-  <h2>Question associée :</h2>
-  <p><%= @question.title %></p>
-<% end %>
+</div>
