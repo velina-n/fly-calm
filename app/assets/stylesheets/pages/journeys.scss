@@ -1,0 +1,91 @@
+/* Structure principale de la page */
+.questionnaire-page {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Retour (icône flèche) */
+.back-button {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.back-link {
+  font-size: 1.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Titre principal */
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.header .highlight {
+  color: #007bff;
+}
+
+/* Illustration */
+.illustration img {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Texte explicatif */
+.instructions p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+.instructions .highlight {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Liste des peurs (radio buttons) */
+.fears-list {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 400px;
+}
+.fear-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.fear-item input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.5);
+}
+.fear-item label {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Bouton de soumission */
+.actions .btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.actions .btn:hover {
+  background-color: #0056b3;
+}
