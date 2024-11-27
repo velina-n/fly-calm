@@ -20,5 +20,38 @@
 <%= render "shared/flashes" %>
 
     <%= yield %>
+    <footer class="bottom-navigation">
+    <a href="#" class="nav-item">
+    <div class="icon">
+      <%= image_tag "home/nav-home.svg", alt: "Accueil" %>
+      </div>
+      <span class="fw-bold">Accueil</span>
+    </a>
+
+    <a href="#" class="nav-item">
+    <div class="icon">
+      <%= image_tag "home/nav-explorer.svg", alt: "Explorer" %>
+      </div>
+      <span class="fw-bold">Explorer</span>
+    </a>
+    <a href="#" class="nav-item">
+    <div class="icon">
+      <%= image_tag "home/nav-consulter.svg", alt: "Consulter" %>
+      </div>
+      <span class="fw-bold">Consulter</span>
+    </a>
+    <a href="#" class="nav-item">
+    <div class="icon">
+       <%= image_tag "home/nav-relaxation.svg", alt: "Se relaxer" %>
+       </div>
+      <span class="fw-bold">Se relaxer</span>
+    </a>
+    <a href="#" class="nav-item">
+    <div class="icon">
+       <%= image_tag "home/nav-favoris.svg", alt: "Favoris" %>
+        </div>
+      <span class="fw-bold">Favoris</span>
+    </a>
+  </footer>
   </body>
 </html>
