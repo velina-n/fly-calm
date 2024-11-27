@@ -1,1 +1,51 @@
 // Specific CSS for your home-page
+.home-page {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .highlight {
+  color: #007bff; /* Bleu pour le prénom */
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.content .highlight {
+  color: #007bff; /* Bleu pour "liberté" */
+}
+
+.illustration img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
