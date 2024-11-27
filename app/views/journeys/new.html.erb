@@ -25,7 +25,7 @@
     <div class="fears-list">
       <% @fears.each do |fear| %>
         <div class="fear-item">
-          <%= radio_button_tag 'journey[fear_ids][]', fear.id, false, id: "fear_#{fear.id}" %>
+          <%= check_box_tag 'journey[fear_ids][]', fear.id, false, id: "fear_#{fear.id}" %>
           <%= label_tag "fear_#{fear.id}", fear.name %>
         </div>
       <% end %>

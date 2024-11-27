@@ -1,4 +1,4 @@
-/* Structure principale de la page */
+/* Structure principale de la page du questionnaire*/
 .questionnaire-page {
   font-family: 'Arial', sans-serif;
   text-align: center;
@@ -88,4 +88,137 @@
 }
 .actions .btn:hover {
   background-color: #0056b3;
+}
+
+// ------------------------------------------------------------------------
+
+// Structure principale de la page dashboard
+.dashboard {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  // Bouton de retour
+  .back-button {
+    text-align: left;
+    margin-bottom: 10px;
+
+    .back-link {
+      font-size: 1.5rem;
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+
+  // Titre principal
+  h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    .highlight {
+      color: #007bff;
+    }
+  }
+
+  // Texte explicatif
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  // Barre de progression
+  .progress-bar {
+    width: 80%;
+    margin: 10px auto 20px;
+
+    .progress-bar-track {
+      width: 100%;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+
+      .progress-bar-fill {
+        height: 100%;
+        background-color: #007bff;
+        transition: width 0.3s ease-in-out; // Animation fluide lors du changement
+
+        &[style*="width: 100%"] { background-color: #28a745; } // Vert à 100%
+        &[style*="width: 50%"] { background-color: #ffc107; } // Jaune à 50%
+
+      }
+    }
+  }
+
+  // Liste des contenus
+  .content-list {
+    margin-top: 20px;
+
+    .content-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+      // Titre du contenu
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      // Description du contenu
+      p {
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      // Bouton d'action
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      // Vidéo (si applicable)
+      .video {
+        margin-bottom: 20px;
+
+        video {
+          width: 100%;
+          max-width: 500px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  // Icône de profil
+  .profile-icon {
+    margin-top: 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
 }
