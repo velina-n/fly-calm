@@ -1,49 +1,55 @@
 <%# app/views/journeys/show.html.erb %>
-<div class="dashboard">
-  <!-- Bouton de retour -->
-  <div class="back-button">
-    <%= link_to "←", root_path, class: "back-link" %>
-  </div>
+<div class='container d-flex justify-content-center align-items-center'>
+  <div class='row'>
+    <div class='col'
+      <div class="dashboard">
+        <!-- Bouton de retour -->
+        <div class="back-button">
+          <%= link_to "←", root_path, class: "back-link" %>
+        </div>
 
-  <!-- Titre principal -->
-  <h1>Ton programme <span class="highlight">personnalisé</span></h1>
-  <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
+        <!-- Titre principal -->
+        <h1>Ton programme <span class="highlight">personnalisé</span></h1>
+        <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
 
-  <!-- Barre de progression -->
-  <div class="progress-bar">
-    <div class="progress-bar-track">
-      <!-- Dynamiser la largeur avec le pourcentage de progression -->
-      <div class="progress-bar-fill" style="width: <%= @progress %>%"></div>
-    </div>
-  </div>
-  <p><%= @progress %>% de progression</p>
-
-  <!-- Liste des contenus -->
-  <div class="content-list">
-    <% @documents.each do |document| %>
-      <div class="content-item">
-        <!-- Affichage d'une vidéo -->
-        <% if document.kind == "video" %>
-          <div class="video">
-            <video controls>
-              <source src="<%= document.url %>" type="video/mp4">
-              Votre navigateur ne supporte pas la lecture des vidéos.
-            </video>
+        <!-- Barre de progression -->
+        <div class="progress-bar">
+          <div class="progress-bar-track">
+            <!-- Dynamiser la largeur avec le pourcentage de progression -->
+            <div class="progress-bar-fill" style="width: <%= @progress %>%"></div>
           </div>
-        <% end %>
+        </div>
+        <p><%= @progress %>% de progression</p>
 
-        <!-- Titre et description -->
-        <h2><%= document.title %></h2>
-        <p><%= document.description %></p>
+        <!-- Liste des contenus -->
+        <div class="content-list">
+          <% @documents.each do |document| %>
+            <div class="content-item">
+              <!-- Affichage d'une vidéo -->
+              <% if document.kind == "video" %>
+                <div class="video">
+                  <video controls>
+                    <source src="<%= document.url %>" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture des vidéos.
+                  </video>
+                </div>
+              <% end %>
 
-        <!-- Action (par exemple, voir plus ou compléter) -->
-        <%= link_to 'Voir plus', journey_journeys_media_path(@journey, document.id), class: 'btn btn-secondary' %>
+              <!-- Titre et description -->
+              <h2><%= document.title %></h2>
+              <p><%= document.description %></p>
+
+              <!-- Action (par exemple, voir plus ou compléter) -->
+              <%= link_to 'Voir plus', journey_journeys_media_path(@journey, document.id), class: 'btn btn-secondary' %>
+            </div>
+          <% end %>
+        </div>
+
+        <!-- Icône de profil -->
+        <div class="profile-icon">
+          <img src="/assets/profile-icon.png" alt="Icône de profil">
+        </div>
       </div>
-    <% end %>
-  </div>
-
-  <!-- Icône de profil -->
-  <div class="profile-icon">
-    <img src="/assets/profile-icon.png" alt="Icône de profil">
+    </div>
   </div>
 </div>
