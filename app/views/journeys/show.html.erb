@@ -34,7 +34,7 @@
               <% when "article" %>
                 <!-- Lien sur le titre de l'article -->
                 <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
-                <p><%= document.content.truncate(100) %></p>
+                <p><%= document.intro.truncate(100) %></p>
 
               <% when "video" %>
                 <!-- Lien sur le titre de la vidéo -->
