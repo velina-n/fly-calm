@@ -1,7 +1,7 @@
 <%# app/views/journeys/show.html.erb %>
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
-    <div class='col'
+    <div class='col'>
       <div class="dashboard">
         <!-- Bouton de retour -->
         <div class="back-button">
@@ -13,40 +13,57 @@
         <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
 
         <!-- Barre de progression -->
-        <div class="progress-bar">
-          <div class="progress-bar-track">
-            <!-- Dynamiser la largeur avec le pourcentage de progression -->
-            <div class="progress-bar-fill" style="width: <%= @progress %>%"></div>
+        <div class="progress" style="height: 20px;">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: <%= @progress %>%;"
+            aria-valuenow="<%= @progress %>"
+            aria-valuemin="0"
+            aria-valuemax="100">
+            <%= @progress %>%
           </div>
         </div>
-        <p><%= @progress %>% de progression</p>
-
+        
         <!-- Liste des contenus -->
         <div class="content-list">
           <% @journey_documents.each do |j_document| %>
             <% document = j_document.document %>
             <div class="content-item">
-              <!-- Affichage d'une vidéo -->
-              <% if document.video? %>
-                <div class="video">
+              <% case document.kind %>
+              <% when "article" %>
+                <!-- Lien sur le titre de l'article -->
+                <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
+                <p><%= document.content.truncate(100) %></p>
+
+              <% when "video" %>
+                <!-- Lien sur le titre de la vidéo -->
+                <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "video-title-link" %></h3>
+                <div class="video-preview">
                   <video controls>
                     <source src="<%= document.url %>" type="video/mp4">
                     Votre navigateur ne supporte pas la lecture des vidéos.
                   </video>
                 </div>
+
+              <% when "audio" %>
+                <!-- Lien sur le titre de l'audio -->
+                <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
+                <div class="audio">
+                  <audio controls>
+                    <source src="<%= document.url %>" type="audio/mpeg">
+                    Votre navigateur ne supporte pas la lecture des audios.
+                  </audio>
+                </div>
+
               <% else %>
-                <!-- Titre et description -->
-                <%= link_to document.title, journeys_document_path(j_document) %>
-
+                <!-- Contenu autre -->
+                <p>Type de contenu non pris en charge.</p>
               <% end %>
-
-
-              <!-- Action (par exemple, voir plus ou compléter) -->
-              <%#= link_to 'Voir plus', journey_journeys_media_path(@journey, document.id), class: 'btn btn-secondary' %>
             </div>
           <% end %>
         </div>
-       </div>
+      </div>
     </div>
   </div>
 </div>

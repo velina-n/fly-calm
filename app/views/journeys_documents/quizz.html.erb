@@ -1,12 +1,17 @@
-<h1>Quizz : <%= @journeys_document.document.title %></h1>
-<p><%= @question.text %></p>
-
-<%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, local: true do |form| %>
-  <% @question.answers.each do |answer| %>
-    <div class="form-check">
-      <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}", name: "journeys_document[answer_id]" %>
-      <%= form.label "answer_#{answer.id}", answer.text %>
+<div class='container d-flex justify-content-center align-items-center'>
+  <div class='row'>
+    <div class='col'
+    ><h1>Quizz : <%= @journeys_document.document.title %></h1>
+      <p><%= @question.text %></p>
+      <%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, local: true do |form| %>
+        <% @question.answers.each do |answer| %>
+          <div class="form-check">
+            <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}", name: "journeys_document[answer_id]" %>
+            <%= form.label "answer_#{answer.id}", answer.text %>
+          </div>
+        <% end %>
+        <%= form.submit "Soumettre la réponse", class: "btn btn-primary mt-3" %>
+      <% end %>
     </div>
-  <% end %>
-  <%= form.submit "Soumettre la réponse", class: "btn btn-primary mt-3" %>
-<% end %>
+  </div>
+</div>

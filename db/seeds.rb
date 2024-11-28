@@ -26,7 +26,7 @@ panique = Fear.create!(name: "Peur de paniquer")
 
 
 doc_alt_1 = altitude.documents.create!(kind: 'article', title: 'Relaxation Techniques', content: 'How to relax during a flight.', url: 'https://example.com/article1')
-doc_alt_2 = altitude.documents.create!(kind: 'video', title: 'Introduction to Flying', content: 'Video content explaining flight safety.', url: 'https://example.com/video1')
+doc_alt_2 = altitude.documents.create!(kind: 'video', title: 'Introduction to Flying', content: 'Video content explaining flight safety.', url: 'https://youtu.be/OPf0YbXqDm0?feature=shared')
 
 
 question = Question.create!(text: 'What scares you the most about flying?', document: doc_alt_1)

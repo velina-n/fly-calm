@@ -4,21 +4,32 @@ class JourneysDocumentsController < ApplicationController
 
   # Afficher un document spécifique avec son statut
   def show
-    # @journeys_document est chargé par le before_action
+    @document = @journeys_document.document
+    # @document sera utilisé pour les articles
+  end
+
+  # Afficher une vidéo sur une page dédiée
+  def video
+    @document = @journeys_document.document
+    # @document sera utilisé pour les vidéos
+  end
+
+   # Marquer une vidéo comme terminée et rediriger vers le quiz
+  def complete_video
+    if @journeys_document.update(status: "completed")
+      redirect_to quizz_journeys_document_path(@journeys_document), notice: "Vidéo terminée ! Passons au quiz."
+    else
+      redirect_to video_journeys_document_path(@journeys_document), alert: "Impossible de marquer la vidéo comme terminée."
+    end
   end
 
   # Mettre à jour le statut du document
   def update
-    # Tenter de mettre à jour le statut du document
     if @journeys_document.update(journeys_document_params)
-      # Rediriger selon le nouveau statut
-      case @journeys_document.status
-      when "completed"
-        redirect_to quizz_journeys_document_path(@journeys_document), notice: "Document terminé ! Passons au quizz."
-      when "quizz_done"
-        redirect_to @journeys_document, notice: "Quizz complété avec succès !"
+      if @journeys_document.completed?
+        redirect_to quizz_journeys_document_path(@journeys_document), notice: "Contenu terminé ! Passons au quiz."
       else
-        redirect_to @journeys_document, notice: "Statut mis à jour."
+        redirect_to journeys_show_path(@journeys_document.journey), notice: "Statut mis à jour."
       end
     else
       render :show, status: :unprocessable_entity
@@ -54,7 +65,10 @@ class JourneysDocumentsController < ApplicationController
 
   # Charger le JourneysDocument
   def set_journeys_document
-    @journeys_document = JourneysDocument.find(params[:id])
+    @journeys_document = JourneysDocument.find_by(id: params[:id])
+    unless @journeys_document
+      redirect_to journey_path, alert: "Le document demandé est introuvable."
+    end
   end
 
   # Filtrer les paramètres autorisés
