@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  # Restreindre l'accès aux autres actions sauf splash et home
+  before_action :authenticate_user!, except: [:splash, :home]
 
+  def splash
+    # Action pour la page de démarrage
+  end
   # Action pour afficher la page d'accueil
   def home
     # Si l'utilisateur est connecté, on affiche son prénom, sinon on invite à se connecter
