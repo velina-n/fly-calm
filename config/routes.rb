@@ -1,9 +1,13 @@
 # config/routes.rb
 Rails.application.routes.draw do
   devise_for :users # Gestion des utilisateurs avec Devise
-
+  # Page de lancement de l'application
+  get '/splash', to: 'pages#splash', as: :splash
   # Page d'accueil
   root to: "pages#home", as: :home
+
+  # Page de félicitations
+  get '/journeys/:id/congratulations', to: 'journeys#congratulations', as: :journey_congratulations
 
   # Gestion des icones de la barre de navigation
   get "/explorer", to: "pages#explorer", as: :explorer
@@ -15,9 +19,10 @@ Rails.application.routes.draw do
   resources :journeys, only: [:new, :create, :show] do
     # Gestion des peurs associées aux programmes
     resources :journeys_fears, only: [:index, :create, :destroy]
-
-    # Gestion des documents associés à un programme
+    get :congratulations
   end
+
+  # Gestion des documents associés à un programme
   resources :journeys_documents, only: [:show, :update], controller: :journeys_documents do
     member do
       get :quizz # Route pour afficher le quizz à la fin d'un document

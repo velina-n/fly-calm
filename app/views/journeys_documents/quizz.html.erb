@@ -1,12 +1,13 @@
+<%# app views journeys documents quizz html erb %>
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
-    <div class='col'
-    ><h1>Quizz : <%= @journeys_document.document.title %></h1>
-      <p><%= @question.text %></p>
-      <%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, local: true do |form| %>
+    <div class='col'>
+      <h1><%= @journeys_document.document.title %></h1>
+      <p><%= @question.text %></p> <!-- Utilisez @question directement -->
+      <%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch do |form| %>
         <% @question.answers.each do |answer| %>
           <div class="form-check">
-            <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}", name: "journeys_document[answer_id]" %>
+            <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}" %>
             <%= form.label "answer_#{answer.id}", answer.text %>
           </div>
         <% end %>
@@ -15,3 +16,4 @@
     </div>
   </div>
 </div>
+

@@ -23,19 +23,25 @@ accident = Fear.create!(name: "Peur de l'accident")
 enfermement = Fear.create!(name: "Peur de l'enfermement")
 panique = Fear.create!(name: "Peur de paniquer")
 
-
-
+# Création des questions et réponses pour les documents
 doc_alt_1 = altitude.documents.create!(kind: 'article', title: 'Relaxation Techniques', content: 'How to relax during a flight.', url: 'https://example.com/article1')
 doc_alt_2 = altitude.documents.create!(kind: 'video', title: 'Introduction to Flying', content: 'Video content explaining flight safety.', url: 'https://youtu.be/OPf0YbXqDm0?feature=shared')
 
 
-question = Question.create!(text: 'What scares you the most about flying?', document: doc_alt_1)
-question.answers.create!(text: 'I feel like the plane might crash.', right: true)
-question.answers.create!(text: 'fdsf fdsf fsd fdsfsd.')
-question.answers.create!(text: 'cest pas la bonne réponse ou peut-être que oui.')
+# Question associée au document doc_alt_1
+question_1 = doc_alt_1.create_question!(text: 'What scares you the most about flying?')
+question_1.answers.create!([
+  { text: 'I feel like the plane might crash.', right: true },
+  { text: 'fdsf fdsf fsd fdsfsd.', right: false },
+  { text: 'cest pas la bonne réponse ou peut-être que oui.', right: false }
+])
 
+# Question associée au document doc_alt_2
+question_2 = doc_alt_2.create_question!(text: 'How do you usually relax during a flight?')
+question_2.answers.create!([
+  { text: 'I try to focus on my breathing.', right: true },
+  { text: 'fdsf fdsf fsd fdsfsd.', right: false },
+  { text: 'cest pas la bonne réponse ou peut-être que oui.', right: false }
+])
 
-question = Question.create!(text: 'How do you usually relax during a flight?', document: doc_alt_2)
-question.answers.create!(text: 'I try to focus on my breathing.', right: true)
-question.answers.create!(text: 'fdsf fdsf fsd fdsfsd.')
-question.answers.create!(text: 'cest pas la bonne réponse ou peut-être que oui.')
+puts "✅ Seed data loaded successfully!"

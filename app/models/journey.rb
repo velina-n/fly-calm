@@ -8,5 +8,8 @@ class Journey < ApplicationRecord
 
   enum status: [:ongoing, :completed]
 
+  def completed?
+    journeys_documents.where.not(status: "quizz_done").empty?
+  end
   validates :status, presence: true
 end

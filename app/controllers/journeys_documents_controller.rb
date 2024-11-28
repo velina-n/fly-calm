@@ -46,19 +46,31 @@ class JourneysDocumentsController < ApplicationController
   end
 
   # Soumettre une réponse pour le quizz
+  # app/controllers/journeys_documents_controller.rb
   def answer
-    # Récupérer l'ID de la réponse sélectionnée depuis le formulaire
-    selected_answer_id = journeys_document_params[:answer_id]
+    # Récupérer la réponse soumise
+    selected_answer_id = params[:journeys_document][:answer_id]
 
-    # Logique pour traiter la réponse soumise (ici, uniquement affichage d'un message)
-    if selected_answer_id.present?
-      flash[:notice] = "Réponse soumise avec succès ! Vous avez choisi la réponse ##{selected_answer_id}."
+    # Vérifier si la réponse sélectionnée est correcte
+    selected_answer = Answer.find_by(id: selected_answer_id)
+
+    if selected_answer&.right?
+      # Marquer le document comme 'quizz_done'
+      @journeys_document.update(status: "quizz_done")
+
+      # Vérifier si tous les documents de la journey sont terminés
+      if @journeys_document.journey.completed?
+        # Rediriger vers la page de félicitations
+        redirect_to congratulations_path(@journeys_document.journey), notice: "Félicitations, vous avez terminé le programme !"
+      else
+        # Rediriger vers la page journeys#show si ce n'était pas le dernier quiz
+        redirect_to journey_path(@journeys_document.journey), notice: "Bonne réponse ! Document terminé."
+      end
     else
-      flash[:alert] = "Aucune réponse sélectionnée."
+      # Rester sur la même page avec un message d'erreur
+      flash[:alert] = "Désolé, la réponse est incorrecte. Réessaie !"
+      redirect_to quizz_journeys_document_path(@journeys_document)
     end
-
-    # Rediriger vers le dashboard des documents (journeys#show)
-    redirect_to journey_path(@journeys_document.journey_id), notice: "Retour au dashboard des documents."
   end
 
   private

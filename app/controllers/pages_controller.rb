@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
+  def splash
+    # Cette méthode rendra la vue pour le splash screen
+  end
   # Action pour afficher la page d'accueil
   def home
     # Si l'utilisateur est connecté, on affiche son prénom, sinon on invite à se connecter

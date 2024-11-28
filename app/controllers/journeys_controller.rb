@@ -44,9 +44,9 @@ class JourneysController < ApplicationController
     @documents = Document.joins(:fears_documents).where(fears_documents: { fear_id: @fears.ids }).distinct
 
     # Calcul de la progression
-    total_documents = @journey_documents.count
-    completed_documents = @journey_documents.where(status: "completed").count
-    @progress = (completed_documents.to_f / total_documents * 100).round
+    total_documents = @journey.journeys_documents.count
+    completed_documents = @journey.journeys_documents.where(status: "quizz_done").count
+    @progress = total_documents.zero? ? 0 : (completed_documents * 100 / total_documents)
   end
 
   def update
@@ -61,16 +61,13 @@ class JourneysController < ApplicationController
   # Affiche la page de félicitations lorsque le programme est terminé
   # Vue associée : app/views/journeys/congratulations.html.erb
   def congratulations
-    # Charge le programme en fonction de l'ID reçu
     @journey = Journey.find(params[:id])
 
-    # Vérifie si le programme est terminé
+    # Vérifiez si la journey est bien terminée avant de rendre la page
     if @journey.completed?
-      # Affiche la page de félicitations si terminé
       render :congratulations
     else
-      # Sinon, renvoie au tableau de bord avec un message d'erreur
-      redirect_to journey_path(@journey), alert: "Vous devez terminer le programme avant d'accéder à cette page."
+      redirect_to journey_path(@journey), alert: "Vous devez terminer tous les documents pour accéder à cette page."
     end
   end
 
