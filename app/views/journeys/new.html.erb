@@ -1,28 +1,19 @@
-<%# app/views/journeys/new.html.erb %>
-<div class='container d-flex justify-content-center align-items-center text-center' style="min-height: 100vh;">
-  <div class='row'>
-    <div class='col'>
-      <div class="questionnaire-page">
-        <!-- Retour (icône flèche) -->
-        <div class="back-button">
-          <%= link_to "←", home_path, class: "back-link" %>
-        </div>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <a href="#" class="back-button">←</a>
+    <h1>Explorons d'abord <br> tes <span class="highlight">craintes en vol</span> 😊</h1>
+    <div class="user-icon">👤</div>
+  </div>
 
-        <!-- Titre principal -->
-        <div class="header text-center">
-          <h1>Explorons ensemble <br> tes <span class="highlight">craintes en vol</span> 😊</h1>
-        </div>
+  <!-- Image -->
+  <div class="d-flex flex-column align-items-center mb-5 pb-4">
+    <%= image_tag("home/journey-image.png", alt: "Image descriptive", class: "main-image") %>
 
-        <!-- Image d'illustration -->
-        <div class="illustration">
-          <img src="/assets/plane_illustration.jpg" alt="Illustration de vol en avion" />
-        </div>
-
-        <!-- Texte explicatif -->
-        <div class="instructions">
-          <p>Aide nous à mieux <span class="highlight">personnaliser</span> le contenu de <span class="highlight">ton programme</span></p>
-        </div>
-
+    <!-- Description -->
+    <p class="description-text pt-4">
+  Ceci nous aidera à  <span class="highlight">personnaliser</span>  <br> le contenu de <span class="highlight">ton programme</span>.
+</p>
         <!-- Formulaire -->
         <%= simple_form_for @journey do |f| %>
           <%= f.association :fears, as: :check_boxes, include_blank: false, include_hidden: false, label: false %>
