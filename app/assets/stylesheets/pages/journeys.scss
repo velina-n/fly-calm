@@ -222,3 +222,13 @@
     }
   }
 }
+
+.article-title-link, .video-title-link {
+  color: #ffa200;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.article-title-link:hover, .video-title-link:hover {
+  text-decoration: underline;
+}

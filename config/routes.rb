@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     member do
       get :quizz # Route pour afficher le quizz à la fin d'un document
       patch :answer # Route pour soumettre une réponse à un quizz
+      get :video # Pour la page dédiée à la vidéo
     end
   end
 
