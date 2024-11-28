@@ -2,8 +2,11 @@
 Rails.application.routes.draw do
   devise_for :users # Gestion des utilisateurs avec Devise
 
+  # Page de démarrage
+  root 'pages#splash'
+
   # Page d'accueil
-  root to: "pages#home", as: :home
+  get '/home', to: "pages#home", as: :home
 
   # Gestion des icones de la barre de navigation
   get "/explorer", to: "pages#explorer", as: :explorer

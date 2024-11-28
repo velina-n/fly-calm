@@ -1,32 +1,22 @@
 // app/assets/stylesheets/pages/_splash.scss
-.splash-screen {
+body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
-
-  .logo {
-    margin-bottom: 20px;
-
-    img {
-      width: 150px;
-      height: auto;
-      border: 2px solid #007bff; // Ajoute une bordure bleue
-      border-radius: 10px;
-      padding: 10px;
-    }
-  }
-
-  h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-
-    .highlight {
-      color: #007bff; // Couleur bleue pour "Calm"
-    }
-  }
+  background-color: #ffffff;
+}
+.splash-screen {
+  text-align: center;
+}
+.logo img {
+  width: 150px;
+  height: auto;
+}
+h1 {
+  font-size: 2em;
+  color: #000000;
+}
+.highlight {
+  color: #ff0000;
 }
