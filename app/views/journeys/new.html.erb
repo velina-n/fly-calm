@@ -25,7 +25,7 @@
 
         <!-- Formulaire -->
         <%= simple_form_for @journey do |f| %>
-          <%= f.association :fears, as: :check_boxes, include_blank: false, include_hidden: false %>
+          <%= f.association :fears, as: :check_boxes, include_blank: false, include_hidden: false, label: false %>
           <%= f.submit "Soumettre", class: "btn btn-primary mt-4" %>
         <% end %>
       </div>

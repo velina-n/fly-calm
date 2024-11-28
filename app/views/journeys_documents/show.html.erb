@@ -1,7 +1,8 @@
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
     <div class='col'><h1><%= @document.title %></h1>
-      <p><%= @document.content %></p>
+    <%# mettre intro, sections, conclusions %>
+      <p><%= @document.intro %></p>
 
       <p>Statut actuel : <%= @journeys_document.status.humanize %></p>
 
