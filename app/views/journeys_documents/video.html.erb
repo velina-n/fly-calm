@@ -1,7 +1,7 @@
 <%# app/views/journeys_documents/video.html.erb %>
 <h1><%= @document.title %></h1>
 <div class="video">
-  <video controls>
+  <video  class="js-player" width="400" playsinline controls data-controller="plyr-video">
     <source src="<%= @document.url %>" type="video/mp4">
     Votre navigateur ne supporte pas la lecture des vidéos.
   </video>
@@ -17,13 +17,4 @@
   <%= link_to "Passer au quizz", quizz_journeys_document_path(@journeys_document), class: "btn btn-success mt-3" %>
 <% end %>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const video = document.querySelector("video");
-    video.onended = function() {
-      // Rediriger vers le quiz à la fin de la vidéo (si tu souhaites garder cette fonctionnalité)
-      window.location.href = "<%= quizz_journeys_document_path(@journeys_document) %>";
-    };
-  });
-</script>
 
