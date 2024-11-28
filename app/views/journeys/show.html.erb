@@ -24,7 +24,7 @@
             <%= @progress %>%
           </div>
         </div>
-        
+
         <!-- Liste des contenus -->
         <div class="content-list">
           <% @journey_documents.each do |j_document| %>
@@ -38,7 +38,7 @@
 
               <% when "video" %>
                 <!-- Lien sur le titre de la vidéo -->
-                <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "video-title-link" %></h3>
+                <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
                 <div class="video-preview">
                   <video controls>
                     <source src="<%= document.url %>" type="video/mp4">

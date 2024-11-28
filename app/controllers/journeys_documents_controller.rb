@@ -1,6 +1,6 @@
 # app/controllers/journeys_documents_controller.rb
 class JourneysDocumentsController < ApplicationController
-  before_action :set_journeys_document, only: [:show, :update, :quizz, :answer]
+  before_action :set_journeys_document, only: [:show, :update, :quizz, :answer, :video]
 
   # Afficher un document spécifique avec son statut
   def show
