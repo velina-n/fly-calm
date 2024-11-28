@@ -1,0 +1,73 @@
+.category-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 30%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label::before {
+  content: "";
+  background-image: asset_url("circle.svg");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  padding-right: 25px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  top: 3px;
+  position: relative;
+}
+
+.category-selector:checked + label::before {
+  content: "";
+  background-image: asset_url("check-circle.svg");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  padding-right: 25px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  top: 3px;
+  position: relative;
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  //font-size: 12px;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+  color: #020100;
+}
+
+.category-selector:checked + label {
+  background-color: #FED986 !important;
+  color: #020100;
+}
+
+legend.col-form-label.pt-0 {
+  display: none;
+}
+
+.description-text {
+  text-align: center; /* Centre le texte horizontalement */
+  font-size: 16px; /* Ajustez la taille si nécessaire */
+  color: #333; /* Couleur de texte */
+  margin: 11 auto; /* Centrage des marges si nécessaire */
+  max-width: 80%; /* Facultatif : Limite la largeur pour un meilleur rendu */
+  line-height: 1.5; /* Ajoute un espacement vertical pour une meilleure lisibilité */
+}
