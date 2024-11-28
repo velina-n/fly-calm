@@ -42,6 +42,20 @@ class JourneysController < ApplicationController
     # Charge les documents associés aux peurs du programme
     @journey_documents = @journey.journeys_documents.includes(:document)
     @documents = Document.joins(:fears_documents).where(fears_documents: { fear_id: @fears.ids }).distinct
+
+    # Calcul de la progression
+    total_documents = @journey_documents.count
+    completed_documents = @journey_documents.where(status: "completed").count
+    @progress = (completed_documents.to_f / total_documents * 100).round
+  end
+
+  def update
+    @journeys_document = JourneysDocument.find(params[:id])
+    if @journeys_document.update(journeys_document_params)
+      redirect_to journey_path(@journeys_document.journey_id), notice: "Statut mis à jour."
+    else
+      redirect_to journey_path(@journeys_document.journey_id), alert: "Impossible de mettre à jour le statut."
+    end
   end
 
   # Affiche la page de félicitations lorsque le programme est terminé
@@ -61,6 +75,10 @@ class JourneysController < ApplicationController
   end
 
   private
+
+  def journeys_document_params
+    params.require(:journeys_document).permit(:status)
+  end
 
   def journey_params
     params.require(:journey).permit(fear_ids: [])
