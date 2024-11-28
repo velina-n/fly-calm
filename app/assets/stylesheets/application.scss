@@ -11,3 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/quizz";
+
+legend.col-form-label.pt-0 {
+  display: none;
+}

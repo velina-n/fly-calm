@@ -1,0 +1,19 @@
+article_slug,text_answer,right
+article_1,La terre entière,FALSE
+article_1,Je suis seul au monde,FALSE
+article_1,20% de la population,TRUE
+article_2,Donnent envie de chocolat,FALSE
+article_2,Font danser de joie,FALSE
+article_2,Activent le mode survie,TRUE
+article_3,Il marche trop bien,FALSE
+article_3,Il renforce la phobie,TRUE
+article_3,Il règle mon problème,FALSE
+video_1,Je bois,FALSE
+video_1,J’appelle les pompiers,FALSE
+video_1,Je fais de la cohérence cardiaque,TRUE
+article_4,C’est la preuve qu’on va se crasher,TRUE
+article_4,L’avion ne doit jamais faire du bruit,TRUE
+article_4,"C’est normal, la structure peut bouger",FALSE
+article_5,Un ventilateur le pousse vers le haut.,TRUE
+article_5,"La magie. Mais chut, c’est un secret.",TRUE
+article_5,La portance créée par les ailes.,FALSE
