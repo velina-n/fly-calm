@@ -1,4 +1,8 @@
 // Styles pour la page Quizz
+.highlight {
+  color: #007bff;
+}
+
 .quizz-page {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -28,9 +32,7 @@
       margin: 20px 0 10px;
       color: #333;
 
-      .highlight {
-        color: #007bff;
-      }
+
     }
 
     p {
