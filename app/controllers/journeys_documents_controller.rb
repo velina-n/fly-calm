@@ -75,4 +75,4 @@ class JourneysDocumentsController < ApplicationController
   def journeys_document_params
     params.require(:journeys_document).permit(:answer_id, :status)
   end
-end
+ end
