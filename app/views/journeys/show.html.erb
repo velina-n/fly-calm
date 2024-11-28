@@ -39,12 +39,15 @@
               <% when "video" %>
                 <!-- Lien sur le titre de la vidéo -->
                 <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
-                <div class="video-preview">
-                  <video controls>
-                    <source src="<%= document.url %>" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture des vidéos.
-                  </video>
-                </div>
+
+                <%= link_to video_journeys_document_path(j_document), class: "stretched-link" do %>
+                  <div class="video-preview">
+                    <video controls>
+                      <source src="<%= document.url %>" type="video/mp4">
+                      Votre navigateur ne supporte pas la lecture des vidéos.
+                    </video>
+                  </div>
+                <% end %>
 
               <% when "audio" %>
                 <!-- Lien sur le titre de l'audio -->
