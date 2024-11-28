@@ -9,6 +9,8 @@ class Seed::SeedArticles
     Document.article.destroy_all
 
     CSV.foreach(@file_path, headers: true) do |row|
+      fears = Fear.where(slug: row['fear_slug']&.split(',')&.map(&:strip))
+
       doc = Document.create!(
         slug: row['slug'],
         title: row['title'],
@@ -18,10 +20,13 @@ class Seed::SeedArticles
         tags: row['tags']&.split(',')&.map(&:strip),
         kind: 'article'
       )
+
       question = Question.create!(
         text: row['question'],
         document: doc
       )
+
+      doc.fears = fears
     end
   end
 end

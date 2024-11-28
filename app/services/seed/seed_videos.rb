@@ -9,6 +9,8 @@ class Seed::SeedVideos
     Document.video.destroy_all
 
     CSV.foreach(@file_path, headers: true) do |row|
+      fears = Fear.where(slug: row['fear_slug']&.split(',')&.map(&:strip))
+
       doc = Document.create!(
         slug: row['video_slug'],
         title: row['title'],
@@ -21,6 +23,8 @@ class Seed::SeedVideos
         text: row['question'],
         document: doc
       )
+
+      doc.fears = fears
     end
   end
 end
