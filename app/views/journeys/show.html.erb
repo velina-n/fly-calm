@@ -1,4 +1,5 @@
 <%# app/views/journeys/show.html.erb %>
+<div id="show">
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
     <div class='col'>
@@ -37,7 +38,7 @@
               <% when "article" %>
                 <!-- Lien sur le titre de l'article -->
                 <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
-                <p><%= document.intro.truncate(100) %></p>
+                <!-- <p><%= document.intro.truncate(100) %></p> -->
 
               <% when "video" %>
                 <!-- Lien sur le titre de la vidéo -->
@@ -72,4 +73,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
