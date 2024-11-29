@@ -5,7 +5,9 @@
       <div class="dashboard">
         <!-- Bouton de retour -->
         <div class="back-button">
-          <%= link_to "←", home_path, class: "back-link" %>
+          <%= link_to home_path, class: "back-link" do %>
+            <%= image_tag 'back-link.svg', alt: 'Back' %>
+          <% end %>
         </div>
 
         <!-- Titre principal -->
