@@ -28,6 +28,9 @@
         <!-- Liste des contenus -->
         <div class="content-list">
           <% @journey_documents.each do |j_document| %>
+            <% if j_document.quizz_done? %>
+              <i class="fa-solid fa-circle-check"></i>
+            <% end %>
             <% document = j_document.document %>
             <div class="content-item">
               <% case document.kind %>

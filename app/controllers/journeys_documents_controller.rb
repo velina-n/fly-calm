@@ -29,7 +29,7 @@ class JourneysDocumentsController < ApplicationController
       if @journeys_document.completed?
         redirect_to quizz_journeys_document_path(@journeys_document), notice: "Contenu terminé ! Passons au quiz."
       else
-        redirect_to journeys_show_path(@journeys_document.journey), notice: "Statut mis à jour."
+        redirect_to journeys_document_path(@journeys_document), notice: "Statut mis à jour."
       end
     else
       render :show, status: :unprocessable_entity
@@ -52,13 +52,18 @@ class JourneysDocumentsController < ApplicationController
 
     # Logique pour traiter la réponse soumise (ici, uniquement affichage d'un message)
     if selected_answer_id.present?
+      @journeys_document.quizz_done!
       flash[:notice] = "Réponse soumise avec succès ! Vous avez choisi la réponse ##{selected_answer_id}."
     else
       flash[:alert] = "Aucune réponse sélectionnée."
     end
 
+    if @journeys_document.journey.journeys_documents.quizz_done.count == @journeys_document.journey.journeys_documents.count
+      redirect_to congratulations_journey_path(@journeys_document.journey), notice: "Félicitations ! Vous avez terminé le programme."
+      return
+    end
     # Rediriger vers le dashboard des documents (journeys#show)
-    redirect_to journey_path(@journeys_document.journey_id), notice: "Retour au dashboard des documents."
+    redirect_to journey_path(@journeys_document.journey), notice: "Retour au dashboard des documents."
   end
 
   private

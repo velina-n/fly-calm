@@ -45,7 +45,7 @@ class JourneysController < ApplicationController
 
     # Calcul de la progression
     total_documents = @journey_documents.count
-    completed_documents = @journey_documents.where(status: "completed").count
+    completed_documents = @journey_documents.quizz_done.count
     @progress = (completed_documents.to_f / total_documents * 100).round
   end
 
