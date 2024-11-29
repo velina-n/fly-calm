@@ -40,8 +40,9 @@ class JourneysController < ApplicationController
     @fears = @journey.fears
 
     # Charge les documents associés aux peurs du programme
-    @journey_documents = @journey.journeys_documents.includes(:document)
-    @documents = Document.joins(:fears_documents).where(fears_documents: { fear_id: @fears.ids }).distinct
+    @journey_documents = @journey.journeys_documents.joins(:document).includes(:document).order("documents.id ASC")
+    # @documents = @journey.documents.order(:id)
+    # @documents = Document.joins(:fears_documents).where(fears_documents: { fear_id: @fears.ids }).distinct
 
     # Calcul de la progression
     total_documents = @journey_documents.count
