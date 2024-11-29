@@ -5,14 +5,17 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f3f4f6; // Couleur identique à celle du fond du logo
+    background-color: #d6d7d2; // Couleur identique au fond de l'image
     margin: 0;
   }
 
   .center-logo img {
-    max-width: 200px; // Ajustez si nécessaire
+    max-width: 400px; // Taille ajustée
+    width: 100%;
+    height: auto;
   }
 }
+
 
 // Désactivation du footer uniquement pour cette page
 .splash-page footer {
