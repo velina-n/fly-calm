@@ -6,15 +6,11 @@
       <div class="dashboard">
         <!-- Bouton de retour -->
         <div class="back-button">
-          <%= link_to home_path, class: "back-link" do %>
-            <%= image_tag 'back-link.svg', alt: 'Back' %>
-          <% end %>
+          <%= link_to "←", home_path, class: "back-link" %>
         </div>
-
         <!-- Titre principal -->
         <h1>Ton programme <span class="highlight">personnalisé</span></h1>
         <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
-
         <!-- Barre de progression -->
         <div class="progress" style="height: 20px;">
           <div
@@ -27,7 +23,6 @@
             <%= @progress %>%
           </div>
         </div>
-
         <!-- Liste des contenus -->
         <div class="content-list">
           <% @journey_documents.each do |j_document| %>
@@ -41,11 +36,9 @@
                 <!-- Lien sur le titre de l'article -->
                 <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
                 <!-- <p><%= document.intro.truncate(100) %></p> -->
-
               <% when "video" %>
                 <!-- Lien sur le titre de la vidéo -->
                 <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
-
                 <%= link_to video_journeys_document_path(j_document), class: "stretched-link" do %>
                   <div class="video-preview">
                     <video controls>
@@ -54,7 +47,6 @@
                     </video>
                   </div>
                 <% end %>
-
               <% when "audio" %>
                 <!-- Lien sur le titre de l'audio -->
                 <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
@@ -64,7 +56,6 @@
                     Votre navigateur ne supporte pas la lecture des audios.
                   </audio>
                 </div>
-
               <% else %>
                 <!-- Contenu autre -->
                 <p>Type de contenu non pris en charge.</p>
