@@ -13,8 +13,8 @@ JourneysDocument.destroy_all
 
 # Création des utilisateurs
 users = User.create!([
-  { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: 123456 },
-  { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: 123456 }
+  { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: '123456' },
+  { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: '123456' }
 ])
 
 # Création des peurs
