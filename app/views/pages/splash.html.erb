@@ -1,19 +1,16 @@
 <%# app/views/pages/splash.html.erb %>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Splash Screen</title></head>
-<body>
+<body class="splash-page">
   <div class="splash-screen">
-    <div class="logo">
+    <div class="center-logo">
       <img src="<%= asset_path('splash/logo.svg') %>" alt="FlyCalm Logo">
     </div>
-    <h1>Fly<span class="highlight">Calm</span></h1>
   </div>
   <script>
     setTimeout(function() {
       window.location.href = "<%= home_path %>";
-    }, 3000);
+    }, 5000);
   </script>
 </body>
 </html>

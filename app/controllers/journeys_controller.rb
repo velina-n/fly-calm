@@ -60,17 +60,15 @@ class JourneysController < ApplicationController
 
   # Affiche la page de félicitations lorsque le programme est terminé
   # Vue associée : app/views/journeys/congratulations.html.erb
-  def congratulations
-    # Charge le programme en fonction de l'ID reçu
-    @journey = Journey.find(params[:id])
-
-    # Vérifie si le programme est terminé
-    if @journey.completed?
-      # Affiche la page de félicitations si terminé
-      render :congratulations
-    else
-      # Sinon, renvoie au tableau de bord avec un message d'erreur
-      redirect_to journey_path(@journey), alert: "Vous devez terminer le programme avant d'accéder à cette page."
+  # app/controllers/journeys_controller.rb
+  class JourneysController < ApplicationController
+    def congratulations
+      @journey = Journey.find(params[:id])
+      if @journey.completed?
+        render :congratulations
+      else
+        redirect_to journey_path(@journey), alert: "Le programme n'est pas encore terminé."
+      end
     end
   end
 
