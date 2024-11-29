@@ -11,11 +11,11 @@ Question.destroy_all
 Document.destroy_all
 JourneysDocument.destroy_all
 
-# Création des utilisateurs
-users = User.create!([
-  { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: '123456' },
-  { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: '123456' }
-])
+# # Création des utilisateurs
+# users = User.create!([
+#   { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: '123456' },
+#   { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: '123456' }
+# ])
 
 # Création des peurs
 puts "creation des fears"
