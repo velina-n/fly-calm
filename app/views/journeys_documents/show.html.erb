@@ -1,10 +1,14 @@
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
-    <div class='col'><h1><%= @document.title %></h1>
+    <div class='col mt-3'><h1 class='text-primary	'><%= @document.title %></h1>
     <%# mettre intro, sections, conclusions %>
       <p><%= @document.intro %></p>
 
-      <p>Statut actuel : <%= @journeys_document.status.humanize %></p>
+      <% if @journeys_document.status.humanize == "Pending" %>
+            <p>Statut actuel : <span class="text-muted"><%= @journeys_document.status.humanize %></span></p>
+      <% else  %>
+            <p>Statut actuel : <span class="text-success"><%= @journeys_document.status.humanize %></span></p>
+      <% end %>
 
       <% if @journeys_document.pending? %>
         <%= form_with model: @journeys_document, url: journeys_document_path(@journeys_document), method: :patch do |form| %>
@@ -14,7 +18,7 @@
       <% elsif @journeys_document.completed? %>
         <%= link_to "Passer au quizz", quizz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
       <% elsif @journeys_document.quizz_done? %>
-        <p>Quizz terminé ! Félicitations 🎉</p>
+        <p class='text-success'>Quizz terminé ! Félicitations 🎉</p>
       <% end %>
     </div>
   </div>
