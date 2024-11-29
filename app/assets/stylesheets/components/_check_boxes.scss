@@ -1,73 +1,61 @@
-.category-wrapper {
+.checkbox-group {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.category-item {
-  flex: 0 0 30%;
+.checkbox-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Rend les items flexibles pour occuper la largeur du conteneur parent */
 }
 
-.category-selector {
+.custom-checkbox {
   position: absolute;
   transform: scale(0);
 }
 
-.category-selector + label::before {
-  content: "";
-  background-image: asset_url("circle.svg");
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-  padding-right: 25px;
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  top: 3px;
-  position: relative;
-}
-
-.category-selector:checked + label::before {
-  content: "";
-  background-image: asset_url("check-circle.svg");
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-  padding-right: 25px;
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  top: 3px;
-  position: relative;
-}
-
-.category-selector + label {
-  display: block;
+.custom-checkbox + label {
   cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  //font-size: 12px;
-  text-align: left;
-  padding: 20px;
-  border: 1px solid #EAEAEA;
-  border-radius: 4px;
-  background-color: white;
-  color: #020100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%; /* Assure que tous les labels ont la même largeur */
+  box-sizing: border-box; /* Inclut le padding et les bordures dans la largeur */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.category-selector:checked + label {
-  background-color: #FED986 !important;
-  color: #020100;
+.custom-checkbox:checked + label {
+  background-color: #ffeb99; /* Couleur jaune pour l'état coché */
+  border-color: #ffcc33;
+  color: #333333;
 }
 
-legend.col-form-label.pt-0 {
-  display: none;
+.custom-checkbox + label::before {
+  content: '✔';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #dcdcdc;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 12px;
+  color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.description-text {
-  text-align: center; /* Centre le texte horizontalement */
-  font-size: 16px; /* Ajustez la taille si nécessaire */
-  color: #333; /* Couleur de texte */
-  margin: 11 auto; /* Centrage des marges si nécessaire */
-  max-width: 80%; /* Facultatif : Limite la largeur pour un meilleur rendu */
-  line-height: 1.5; /* Ajoute un espacement vertical pour une meilleure lisibilité */
+.custom-checkbox:checked + label::before {
+  background-color: #ffcc33;
+  border-color: #ffcc33;
+  color: white;
 }
