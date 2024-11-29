@@ -18,9 +18,12 @@ Rails.application.routes.draw do
   resources :journeys, only: [:new, :create, :show] do
     # Gestion des peurs associées aux programmes
     resources :journeys_fears, only: [:index, :create, :destroy]
-
-    # Gestion des documents associés à un programme
+    # Route pour la page de félicitations
+    member do
+      get 'congratulations'
+    end
   end
+  # Gestion des documents associés à un programme
   resources :journeys_documents, only: [:show, :update], controller: :journeys_documents do
     member do
       get :quizz # Route pour afficher le quizz à la fin d'un document
