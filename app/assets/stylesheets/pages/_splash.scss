@@ -1,22 +1,20 @@
 // app/assets/stylesheets/pages/_splash.scss
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffffff;
+.splash-page {
+  .splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6; // Couleur identique à celle du fond du logo
+    margin: 0;
+  }
+
+  .center-logo img {
+    max-width: 200px; // Ajustez si nécessaire
+  }
 }
-.splash-screen {
-  text-align: center;
-}
-.logo img {
-  width: 150px;
-  height: auto;
-}
-h1 {
-  font-size: 2em;
-  color: #000000;
-}
-.highlight {
-  color: #ff0000;
+
+// Désactivation du footer uniquement pour cette page
+.splash-page footer {
+  display: none;
 }
