@@ -7,5 +7,7 @@ class Document < ApplicationRecord
   has_many :sections, dependent: :destroy
   has_one :question, dependent: :destroy
   has_many :sections, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_by, through: :favorites, source: :user
   enum kind: [:article, :video, :audio]
 end

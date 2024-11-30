@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Page de démarrage
   root 'pages#splash'
 
+
   # Page d'accueil
   get '/home', to: "pages#home", as: :home
 
@@ -43,6 +44,9 @@ Rails.application.routes.draw do
 
   # Gestion des documents
   resources :documents, only: [:index, :show] do
+    member do
+      post :toggle_favorite # Route pour ajouter ou retirer un document des favoris
+    end
     # Questions associées à un document
     resources :questions, only: [:index, :show]
   end
@@ -54,5 +58,8 @@ Rails.application.routes.draw do
   # Gestion des peurs
   resources :fears, only: [:index, :show, :create, :update, :destroy]
 
-
+  # Gestion des favoris
+  resources :favorites, only: [] do
+    post 'toggle', on: :collection
+  end
 end
