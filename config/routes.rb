@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   get 'relaxer/circle', to: 'relaxer#circle'
   get 'relaxer/bar', to: 'relaxer#bar'
 
+  # Gestion des consultations
+  get '/calendly', to: 'pages#calendly', as: :calendly
+
+
   # Gestion des programmes (Journeys)
   resources :journeys, only: [:new, :create, :show] do
     # Gestion des peurs associées aux programmes
