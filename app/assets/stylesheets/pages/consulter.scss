@@ -1,0 +1,26 @@
+// app assets stylesheets pages consulter.scss
+.appointment-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.appointment-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: none;
+}
