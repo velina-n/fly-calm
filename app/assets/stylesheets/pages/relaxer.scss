@@ -1,0 +1,28 @@
+// app assets stylesheets pages relaxer.scss
+.relaxation-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db; /* Couleur de fond */
+  border-radius: 50%; /* Cercle parfait */
+  transition: all 4s ease; /* Animation fluide */
+  margin: 20px auto;
+}
+
+.breath-bar {
+  width: 50px;
+  height: 200px;
+  background-color: #2ecc71;
+  transition: all 4s ease;
+  margin: 20px auto;
+}

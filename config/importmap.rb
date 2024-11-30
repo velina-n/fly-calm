@@ -8,3 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "plyr", to: "https://cdn.skypack.dev/plyr@3.7.8"
+pin "breathing_animations", to: "breathing_animations.js"
+

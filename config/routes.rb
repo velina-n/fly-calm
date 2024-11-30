@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get 'relaxer/index'
   devise_for :users # Gestion des utilisateurs avec Devise
 
   # Page de démarrage
@@ -11,8 +12,12 @@ Rails.application.routes.draw do
   # Gestion des icones de la barre de navigation
   get "/explorer", to: "pages#explorer", as: :explorer
   get "/consulter", to: "pages#consulter", as: :consulter
-  get "/relaxer", to: "pages#relaxer", as: :relaxer
   get "/favoris", to: "pages#favoris", as: :favoris
+
+  # Gestion des pages de relaxation
+  get 'relaxer', to: 'relaxer#index'
+  get 'relaxer/circle', to: 'relaxer#circle'
+  get 'relaxer/bar', to: 'relaxer#bar'
 
   # Gestion des programmes (Journeys)
   resources :journeys, only: [:new, :create, :show] do
