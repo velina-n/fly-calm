@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # Page de démarrage
   root 'pages#splash'
 
-
   # Page d'accueil
   get '/home', to: "pages#home", as: :home
 

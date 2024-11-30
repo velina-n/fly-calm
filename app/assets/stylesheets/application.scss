@@ -15,7 +15,12 @@
 @import "pages/journeys_documents_show";
 @import 'pages/relaxer';
 @import 'pages/consulter';
+@import 'pages/journeys_show';
 
 legend.col-form-label.pt-0 {
   display: none;
+}
+
+.hidden {
+  display: none !important; /* Masque complètement l'élément */
 }
