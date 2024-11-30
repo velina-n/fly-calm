@@ -1,3 +1,4 @@
+# app services seed seed_articles.rb
 require "csv"
 
 class Seed::SeedArticles
