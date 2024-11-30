@@ -6,6 +6,6 @@ class Document < ApplicationRecord
   has_many :journeys, through: :journeys_documents
   has_many :sections, dependent: :destroy
   has_one :question, dependent: :destroy
-
+  has_many :sections, dependent: :destroy
   enum kind: [:article, :video, :audio]
 end
