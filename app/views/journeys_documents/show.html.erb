@@ -31,7 +31,7 @@
           <%= form.hidden_field :status, value: "completed" %>
           <%= form.submit "Marquer comme terminé", class: "btn btn-primary" %>
         <% end %>
-      </div>
+      
       <% elsif @journeys_document.completed? %>
         <%= link_to "Passer au quizz", quizz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
       <% elsif @journeys_document.quizz_done? %>

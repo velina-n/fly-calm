@@ -55,26 +55,16 @@ p {
 }
 
 /* Contenu des sections (collapse) */
-.collapse {
-  padding: 15px;
-  background-color: #f8f9fa; /* Fond léger */
-  border: 1px solid #e5e5e5; /* Bordure subtile */
-  border-radius: 8px;
-  margin-bottom: 20px;
-  overflow: hidden;
+.custom-collapse {
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
-/* Transition pour afficher ou cacher */
-.collapse.show {
+.custom-collapse.show {
   opacity: 1;
-  max-height: 500px;
+  max-height: 500px; /* Ajuste la hauteur maximale selon le contenu */
 }
 
-.collapse:not(.show) {
-  opacity: 0;
-  max-height: 0;
-}
+
 
 /* Conteneur pour centrer le bouton */
 .button-container {

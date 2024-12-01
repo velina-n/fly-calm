@@ -6,30 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Calendly Widget -->
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
+    <!-- Importmap pour charger les fichiers JS -->
+    <%= javascript_importmap_tags %>
+
+    <!-- Meta Tags -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Plyr CSS -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <!-- Application CSS -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
 
-    <!-- Import du fichier breathing_animations.js -->
-    <script type="module">
-      import "breathing_animations";
-    </script>
-
+    <!-- PWA Manifest -->
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
+    <!-- iOS PWA Links -->
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
   <body>
+    <!-- Navbar -->
     <%= render "shared/navbar" %>
+
+    <!-- Flashes (notifications) -->
     <%#= render "shared/flashes" %>
 
+    <!-- Contenu principal -->
     <%= yield %>
 
+    <!-- Navigation en bas de page -->
     <%= render "shared/bottom_navigation" %>
   </body>
 </html>
