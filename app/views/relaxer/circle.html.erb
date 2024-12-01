@@ -1,7 +1,12 @@
 <%# app views relaxer circle.html.erb %>
 <div class="back-button">
-          <%= link_to "←", home_path, class: "back-link" %>
-        </div>
+  <%= link_to "←", relaxer_path, class: "back-link" %>
+</div>
 <h1>Respiration Cercle</h1>
 <div class="circle"></div>
 <p>Suivez le cercle qui respire.</p>
+
+<%= javascript_importmap_tags %>
+<script type="module">
+  import "animations/circle_animation";
+</script>

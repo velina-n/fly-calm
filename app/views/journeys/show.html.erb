@@ -1,70 +1,76 @@
-<%# app/views/journeys/show.html.erb %>
 <div id="show">
-<div class='container d-flex justify-content-center align-items-center'>
-  <div class='row'>
-    <div class='col'>
-      <div class="dashboard">
-        <!-- Bouton de retour -->
-        <div class="back-button">
-          <%= link_to "←", home_path, class: "back-link" %>
-        </div>
-        <!-- Titre principal -->
-        <h1>Ton programme <span class="highlight">personnalisé</span></h1>
-        <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
-        <!-- Barre de progression -->
-        <div class="progress" style="height: 20px;">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: <%= @progress %>%;"
-            aria-valuenow="<%= @progress %>"
-            aria-valuemin="0"
-            aria-valuemax="100">
-            <%= @progress %>%
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="dashboard">
+          <!-- Titre principal -->
+          <h1>Ton programme <span class="highlight">personnalisé</span></h1>
+          <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
+
+          <!-- Barre de progression -->
+          <div class="progress" style="height: 20px;">
+            <div
+              class="progress-bar bg-success"
+              role="progressbar"
+              style="width: <%= @progress %>%;"
+              aria-valuenow="<%= @progress %>"
+              aria-valuemin="0"
+              aria-valuemax="100">
+              <%= @progress %>%
+            </div>
           </div>
-        </div>
-        <!-- Liste des contenus -->
-        <div class="content-list">
+
+          <!-- Liste des contenus -->
           <% @journey_documents.each do |j_document| %>
-            <% if j_document.quizz_done? %>
-              <i class="fa-solid fa-circle-check"></i>
-            <% end %>
             <% document = j_document.document %>
             <div class="content-item">
-              <% case document.kind %>
-              <% when "article" %>
-                <!-- Lien sur le titre de l'article -->
-                <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
-                <!-- <p><%= document.intro.truncate(100) %></p> -->
-              <% when "video" %>
-                <!-- Lien sur le titre de la vidéo -->
-                <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
-                <%= link_to video_journeys_document_path(j_document), class: "stretched-link" do %>
-                  <div class="video-preview">
-                    <video controls>
-                      <source src="<%= document.url %>" type="video/mp4">
-                      Votre navigateur ne supporte pas la lecture des vidéos.
-                    </video>
-                  </div>
+              <!-- Bloc de gauche : Titre -->
+              <div class="document-title">
+                <% case document.kind %>
+                <% when "article" %>
+                  <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
+                <% when "video" %>
+                  <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
+                <% when "audio" %>
+                  <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
+                <% else %>
+                  <p>Type de contenu non pris en charge.</p>
                 <% end %>
-              <% when "audio" %>
-                <!-- Lien sur le titre de l'audio -->
-                <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
-                <div class="audio">
-                  <audio controls>
-                    <source src="<%= document.url %>" type="audio/mpeg">
-                    Votre navigateur ne supporte pas la lecture des audios.
-                  </audio>
-                </div>
-              <% else %>
-                <!-- Contenu autre -->
-                <p>Type de contenu non pris en charge.</p>
-              <% end %>
+              </div>
+
+              <!-- Bloc de droite : Icône de cœur -->
+              <div class="favorite-icon"
+                   data-controller="favorites"
+                   data-document-id="<%= document.id %>"
+                   data-action="click->favorites#toggle">
+                <% if current_user.favorite_documents.include?(document) %>
+                  <!-- Icône cœur rempli (favori) -->
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
+                       alt="Heart Filled"
+                       class="heart-filled"
+                       data-favorites-target="heartFilled">
+                  <!-- Icône cœur vide (non favori) -->
+                  <img src="<%= asset_path('icons/heart-open.svgg') %>"
+                       alt="Heart Open"
+                       class="heart-open hidden"
+                       data-favorites-target="heartOpen">
+                <% else %>
+                  <!-- Icône cœur rempli (favori) -->
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
+                       alt="Heart Filled"
+                       class="heart-filled hidden"
+                       data-favorites-target="heartFilled">
+                  <!-- Icône cœur vide (non favori) -->
+                  <img src="<%= asset_path('icons/heart-open.svg') %>"
+                       alt="Heart Open"
+                       class="heart-open"
+                       data-favorites-target="heartOpen">
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
