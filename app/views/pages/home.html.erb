@@ -2,20 +2,14 @@
 <div class="home-page">
   <header class="header">
     <h2>Bonjour <span class="highlight"><%= @user_name %></span> !</h2>
-    <i class="icon-user"></i>
   </header>
 
   <main class="content">
     <h1>Bienvenue dans <span class="brand">Fly Calm</span> !</h1>
-
     <div class="illustration">
       <%= image_tag "home/homepage-photo.svg", alt: "Illustration de voyage" %>
     </div>
-
     <p>Transformons ensemble ta peur de l’avion en <span class="highlight">liberté</span> de voler.</p>
     <%= link_to 'Commencer', new_journey_path, class: 'btn btn-primary' %>
   </main>
-
-  <!-- Barre de navigation en bas de la page -->
-  
 </div>
