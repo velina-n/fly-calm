@@ -1,4 +1,7 @@
-// Import and register all your controllers from the importmap via controllers/**/*_controller
-import { application } from "controllers/application"
-import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
-eagerLoadControllersFrom("controllers", application)
+// Stimulus controllers loader
+import { application } from "./application";
+
+import { definitionsFromContext } from "@hotwired/stimulus-loading";
+
+const context = require.context("controllers", true, /\.js$/);
+application.load(definitionsFromContext(context));

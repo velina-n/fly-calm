@@ -45,23 +45,23 @@
                    data-action="click->favorites#toggle">
                 <% if current_user.favorite_documents.include?(document) %>
                   <!-- Icône cœur rempli (favori) -->
-                  <img src="<%= asset_path('icons/heart-filled.png') %>"
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
                        alt="Heart Filled"
                        class="heart-filled"
                        data-favorites-target="heartFilled">
                   <!-- Icône cœur vide (non favori) -->
-                  <img src="<%= asset_path('icons/heart-open.png') %>"
+                  <img src="<%= asset_path('icons/heart-open.svgg') %>"
                        alt="Heart Open"
                        class="heart-open hidden"
                        data-favorites-target="heartOpen">
                 <% else %>
                   <!-- Icône cœur rempli (favori) -->
-                  <img src="<%= asset_path('icons/heart-filled.png') %>"
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
                        alt="Heart Filled"
                        class="heart-filled hidden"
                        data-favorites-target="heartFilled">
                   <!-- Icône cœur vide (non favori) -->
-                  <img src="<%= asset_path('icons/heart-open.png') %>"
+                  <img src="<%= asset_path('icons/heart-open.svg') %>"
                        alt="Heart Open"
                        class="heart-open"
                        data-favorites-target="heartOpen">
