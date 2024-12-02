@@ -3,6 +3,7 @@
   <h1>Ton programme <span class="highlight">personnalisé</span></h1>
   <p>Voici ton point de départ pour surmonter la peur de l’avion :</p>
 
+<<<<<<< HEAD
   <!-- Barre de progression -->
   <div class="progress" style="height: 20px;">
     <div
@@ -13,6 +14,79 @@
       aria-valuemin="0"
       aria-valuemax="100">
       <%= @progress %>%
+=======
+          <!-- Barre de progression -->
+          <div class="progress" style="height: 20px;">
+            <div
+              class="progress-bar bg-success"
+              role="progressbar"
+              style="width: <%= @progress %>%;"
+              aria-valuenow="<%= @progress %>"
+              aria-valuemin="0"
+              aria-valuemax="100">
+              <%= @progress %>%
+            </div>
+          </div>
+
+        </div>
+
+        <div class="image-section">
+          <%= image_tag "leonardo.png", alt:"Leonardo Image", class: "document-image"%>
+        </div>
+
+        <!-- Liste des contenus -->
+        <div class="content-list">
+          <!-- Liste des contenus -->
+          <% @journey_documents.each do |j_document| %>
+            <% document = j_document.document %>
+            <div class="content-item">
+              <%# enlever la phrase si on veut mettre des videos %>
+              <% unless document.kind == 'video' %>
+                <!-- Bloc de gauche : Titre -->
+                <div class="document-title">
+                  <% case document.kind %>
+                  <% when "article" %>
+                    <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
+                  <% when "audio" %>
+                    <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
+                  <% else %>
+                    <p>Type de contenu non pris en charge.</p>
+                  <% end %>
+                </div>
+              <% end %>
+              <div class="favorite-icon"
+                  data-controller="favorites"
+                  data-document-id="<%= document.id %>"
+                  data-action="click->favorites#toggle">
+                <% if current_user.favorite_documents.include?(document) %>
+                  <!-- Icône cœur rempli (favori) -->
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
+                      alt="Heart Filled"
+                      class="heart-filled"
+                      data-favorites-target="heartFilled">
+                  <!-- Icône cœur vide (non favori) -->
+                  <img src="<%= asset_path('icons/heart-open.svgg') %>"
+                      alt="Heart Open"
+                      class="heart-open hidden"
+                      data-favorites-target="heartOpen">
+                <% else %>
+                  <!-- Icône cœur rempli (favori) -->
+                  <img src="<%= asset_path('icons/heart-filled.svg') %>"
+                      alt="Heart Filled"
+                      class="heart-filled hidden"
+                      data-favorites-target="heartFilled">
+                  <!-- Icône cœur vide (non favori) -->
+                  <img src="<%= asset_path('icons/heart-open.svg') %>"
+                      alt="Heart Open"
+                      class="heart-open"
+                      data-favorites-target="heartOpen">
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+>>>>>>> master
     </div>
   </div>
 

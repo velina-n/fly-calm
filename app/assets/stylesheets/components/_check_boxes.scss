@@ -29,7 +29,7 @@
   background-color: #ffffff;
   color: #000000;
   width: 100%; /* Assure que tous les labels ont la même largeur */
-  box-sizing: border-box; /* Inclut le padding et les bordures dans la largeur */
+   /* Inclut le padding et les bordures dans la largeur */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -59,4 +59,8 @@
   background-color: #ffcc33;
   border-color: #ffcc33;
   color: white;
+}
+.form-new-journey {
+  display: flex;
+flex-direction: column;
 }

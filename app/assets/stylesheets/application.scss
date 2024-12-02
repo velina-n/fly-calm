@@ -10,6 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+<<<<<<< HEAD
+=======
+@import "pages/quizz";
+@import "pages/splash";
+@import "pages/journeys_documents_show";
+@import 'animations';
+@import 'pages/consulter';
+@import 'pages/journeys_show';
+@import "components/navbar";
+>>>>>>> master
 
 legend.col-form-label.pt-0 {
   display: none;
