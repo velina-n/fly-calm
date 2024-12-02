@@ -54,15 +54,15 @@ p {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenu des sections (collapse) */
-.custom-collapse {
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-}
+// /* Contenu des sections (collapse) */
+// .custom-collapse {
+//   transition: max-height 0.4s ease, opacity 0.4s ease;
+// }
 
-.custom-collapse.show {
-  opacity: 1;
-  max-height: 500px; /* Ajuste la hauteur maximale selon le contenu */
-}
+// .custom-collapse.show {
+//   opacity: 1;
+//   max-height: 500px; /* Ajuste la hauteur maximale selon le contenu */
+// }
 
 
 
