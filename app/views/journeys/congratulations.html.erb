@@ -2,22 +2,54 @@
 <div class='container d-flex justify-content-center align-items-center text-center' style="min-height: 100vh;">
   <div class='row'>
     <div class='col'>
-      <div class="congratulations-page">
+      <div class="congratulations-page mx-1 mb-1">
         <h1>🎉 Félicitations ! 🎉</h1>
-        <p>Tu viens de terminer avec succès ton programme sur la peur de l’avion !</p>
+        <p style="font-weight: bold;" class="text-start">
+          Tu viens de terminer avec succès ton programme sur la peur de l'avion 👏 !
+          Tu as désormais les clés pour transformer tes pensées négatives.
+        </p>
         <div class="progress-bar">
           <div class="progress-bar-track">
             <div class="progress-bar-fill" style="width: 100%;"></div>
           </div>
         </div>
-        <p>100% complété</p>
-        <p>Tu as désormais les clés pour transformer tes pensées négatives et mieux gérer ton stress.</p>
-        <div class="actions">
-          <a href="<%= explorer_path %>" class="btn btn-primary">Continuer à explorer</a>
-          <a href="<%= consulter_path %>" class="btn btn-secondary">Prendre un rendez-vous avec un expert</a>
+
+         <!-- Barre de progression -->
+          <div class="progress my-3" style="height: 10px;">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              100%
+            </div>
+          </div>
+
+
+        <%# rajouter la photo %>
+        <%= image_tag "splash/logo.svg", alt: "Logo", class: "logo-congratulation", width: "300", height: "200" %>
+
+        <%# rajouer un paragraphe de texte %>
+        <div class='mt-5'>
+          <p style="font-weight: bold;" class="text-start">
+            Continue à avancer avec confiance !
+            Tu peux explorer le contenu dédié à chaque étape du vol ou
+            prendre rendez-vous avec un expert si tu en ressens le besoin ✈️.
+          </p>
         </div>
+
+        <div class="actions">
+          <%# rajouter de la marge entre les bouttons %>
+          <a href="<%= explorer_path %>" class="btn btn-explorer btn-lg px-4">
+            <i class="fas fa-plane-departure me-2"></i>
+            Continuer à explorer
+          </a>
+
+          <a href="<%= consulter_path %>" class="btn btn-rdv mt-3 mb-3">Prendre un rendez-vous avec un expert</a>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+<%# trouver le code de la barre de progression et l'implémenter dans cette vue %>
 
