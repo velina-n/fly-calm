@@ -1,0 +1,12 @@
+<%# app views relaxer bar.html.erb %>
+<div class="back-button">
+  <%= link_to "←", relaxer_path, class: "back-link" %>
+</div>
+<h1>Respiration Barre</h1>
+<div class="breath-bar"></div>
+<p>Suivez la barre qui monte et descend.</p>
+
+<%= javascript_importmap_tags %>
+<script type="module">
+  import "animations/bar_animation";
+</script>

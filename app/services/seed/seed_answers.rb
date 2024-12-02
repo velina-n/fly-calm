@@ -1,3 +1,4 @@
+# app services seed seed_answers.rb
 require "csv"
 
 class Seed::SeedAnswers
@@ -9,7 +10,7 @@ class Seed::SeedAnswers
     CSV.foreach(@file_path, headers: true) do |row|
       article = Document.find_by(slug: row['article_slug'].strip)
       question = article.question
-      
+
       Answer.create!(
         question: question,
         text: row['text_answer'],

@@ -1,16 +1,37 @@
+<%# app views journeys_documents show.html.erb %>
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
-    <div class='col'><h1><%= @document.title %></h1>
-    <%# mettre intro, sections, conclusions %>
+    <div class='col'>
+      <!-- Titre principal -->
+      <h1 class='document-title'><%= @document.title %></h1>
+
+      <!-- Introduction -->
       <p><%= @document.intro %></p>
 
-      <p>Statut actuel : <%= @journeys_document.status.humanize %></p>
+      <!-- Sections en "collapse" -->
+      <div id="sections">
+        <% @document.sections.each_with_index do |section, index| %>
+          <div class="section">
+            <!-- Titre de la section -->
+            <h2 class="section-title" data-bs-toggle="collapse" data-bs-target="#section-<%= index %>" data-turbo="false">
+              <%= section.title %>
+            </h2>
+
+            <!-- Contenu de la section -->
+            <div id="section-<%= index %>" class="collapse custom-collapse">
+              <p><%= section.content %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
       <% if @journeys_document.pending? %>
+      <div class= "button-container">
         <%= form_with model: @journeys_document, url: journeys_document_path(@journeys_document), method: :patch do |form| %>
           <%= form.hidden_field :status, value: "completed" %>
           <%= form.submit "Marquer comme terminé", class: "btn btn-primary" %>
         <% end %>
+
       <% elsif @journeys_document.completed? %>
         <%= link_to "Passer au quizz", quizz_journeys_document_path(@journeys_document), class: "btn btn-success" %>
       <% elsif @journeys_document.quizz_done? %>
@@ -18,4 +39,10 @@
       <% end %>
     </div>
   </div>
+</div>
+<h2 class="section-title" data-bs-toggle="collapse" data-bs-target="#test-section">
+  Test Section
+</h2>
+<div id="test-section" class="collapse">
+  <p>Contenu de test</p>
 </div>

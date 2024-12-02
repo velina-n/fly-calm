@@ -1,0 +1,92 @@
+// app assets stylesheets pages journeys_documents_show.scss
+/* Typographie globale */
+body {
+  font-family: 'Poppins', sans-serif; /* Police moderne */
+  line-height: 1.6;
+  background-color: #f7f9fc; /* Fond général doux */
+  color: #333; /* Couleur de texte principale */
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 900px; /* Largeur maximale pour centrer */
+  margin: 40px auto; /* Marges pour centrer */
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+/* Titre principal */
+.document-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d3557; /* Bleu foncé moderne */
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Texte d'introduction */
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555; /* Texte secondaire */
+}
+
+/* Titres des sections */
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #457b9d; /* Bleu clair moderne */
+  padding: 15px;
+  margin: 0;
+  border-bottom: none;
+  background-color: #f1faee; /* Fond clair */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet hover sur les titres */
+.section-title:hover {
+  background-color: #a8dadc; /* Couleur au survol */
+  color: #1d3557; /* Accentuation du texte */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// /* Contenu des sections (collapse) */
+// .custom-collapse {
+//   transition: max-height 0.4s ease, opacity 0.4s ease;
+// }
+
+// .custom-collapse.show {
+//   opacity: 1;
+//   max-height: 500px; /* Ajuste la hauteur maximale selon le contenu */
+// }
+
+
+
+/* Conteneur pour centrer le bouton */
+.button-container {
+  text-align: center; /* Centre le contenu horizontalement */
+}
+
+/* Bouton */
+button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #1d3557; /* Bleu moderne */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet hover sur le bouton */
+button:hover {
+  background-color: #457b9d; /* Bleu clair */
+  transform: scale(1.05); /* Légère animation */
+}

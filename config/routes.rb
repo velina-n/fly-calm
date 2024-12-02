@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get 'relaxer/index'
   devise_for :users # Gestion des utilisateurs avec Devise
 
   # Page de démarrage
@@ -11,8 +12,16 @@ Rails.application.routes.draw do
   # Gestion des icones de la barre de navigation
   get "/explorer", to: "pages#explorer", as: :explorer
   get "/consulter", to: "pages#consulter", as: :consulter
-  get "/relaxer", to: "pages#relaxer", as: :relaxer
   get "/favoris", to: "pages#favoris", as: :favoris
+
+  # Gestion des pages de relaxation
+  get 'relaxer', to: 'relaxer#index'
+  get 'relaxer/circle', to: 'relaxer#circle'
+  get 'relaxer/bar', to: 'relaxer#bar'
+
+  # Gestion des consultations
+  get '/calendly', to: 'pages#calendly', as: :calendly
+
 
   # Gestion des programmes (Journeys)
   resources :journeys, only: [:new, :create, :show] do
@@ -34,6 +43,9 @@ Rails.application.routes.draw do
 
   # Gestion des documents
   resources :documents, only: [:index, :show] do
+    member do
+      post :toggle_favorite # Route pour ajouter ou retirer un document des favoris
+    end
     # Questions associées à un document
     resources :questions, only: [:index, :show]
   end
@@ -45,5 +57,8 @@ Rails.application.routes.draw do
   # Gestion des peurs
   resources :fears, only: [:index, :show, :create, :update, :destroy]
 
-
+  # Gestion des favoris
+  resources :favorites, only: [] do
+    post 'toggle', on: :collection
+  end
 end

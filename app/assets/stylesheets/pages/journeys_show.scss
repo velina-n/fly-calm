@@ -1,3 +1,4 @@
+
 #show {
   min-height: 100vh;
   background-color: #f9f9f9;
@@ -116,20 +117,24 @@
           }
         }
 
-        .audio {
-          margin-top: 10px;
 
-          audio {
-            width: 100%;
-          }
-        }
 
-        .fa-circle-check {
-          color: #28a745;
-          font-size: 1.5rem;
-          margin-right: 10px;
-        }
-      }
-    }
-  }
+/* Titre du document */
+.document-title {
+  flex: 1; /* Prend tout l'espace disponible */
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
 }
+
+/* Icône de cœur */
+.favorite-icon img {
+  width: 24px; /* Taille de l'icône */
+  height: 24px;
+  cursor: pointer; /* Curseur cliquable */
+}
+
+.hidden {
+  display: none !important; /* Masque complètement l'élément */
+}
+

@@ -1,21 +1,33 @@
-// Specific CSS for your home-page
-.home-page {
-  text-align: center;
+/* Styles globaux */
+body {
+  margin: 0;
   font-family: 'Arial', sans-serif;
-  padding: 20px;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-.header {
+/* Conteneur principal */
+.home-page {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  justify-content: space-between; /* Espace entre le contenu et la barre de navigation */
+  padding: 20px;
+  text-align: center;
+}
+
+/* En-tête */
+.header {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .header .highlight {
-  color: #007bff; /* Bleu pour le prénom */
+  color: #007bff;
+  font-weight: bold;
 }
 
+/* Contenu principal */
 .content h1 {
   font-size: 2rem;
   margin: 10px 0;
@@ -23,29 +35,75 @@
 
 .content p {
   font-size: 1.2rem;
-  color: #555;
+  margin: 15px 0;
 }
 
 .content .highlight {
-  color: #007bff; /* Bleu pour "liberté" */
+  color: #007bff;
+  font-weight: bold;
 }
 
 .illustration img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
+/* Bouton principal */
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
+  padding: 12px 20px;
   font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+/* Barre de navigation inférieure */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.nav-item {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-item:hover {
+  color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 10px;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .illustration img {
+    max-width: 90%;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
 }

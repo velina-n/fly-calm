@@ -1,8 +1,26 @@
-<div class='container d-flex justify-content-center align-items-center'>
-  <div class='row'>
-    <div class='col'>
-      <h1>Consulter</h1>
-      <p>Prendre Rendez-vous avec votre expert Velina Negovanska.</p>
-    </div>
+<%# app views pages consulter html erb %>
+<div class="sos-container">
+  <div class="sos-header">
+    <a href="#" class="back-btn">&larr;</a>
+    <h1 class="sos-title">
+      Une aide avec nos experts est <span class="available">disponible</span>
+    </h1>
+    <a href="#" class="profile-btn">&#128100;</a>
+  </div>
+
+  <div class="sos-image">
+    <img src="<%= asset_path('consulter/consulter.png') %>" alt="Aide avec nos experts" />
+  </div>
+
+  <p class="sos-description">
+    Nos <strong>psychologues</strong> spécialisées dans la peur de l’avion et nos <strong>pilotes</strong>
+    professionnels sont là pour vous accompagner à chaque étape.
+  </p>
+
+  <div class="sos-buttons">
+    <a href="#" class="btn chat-btn">Discuter par chat</a>
+    <a href="<%= calendly_path %>" class="btn appointment-btn">
+      Prendre rdv avec nos experts
+    </a>
   </div>
 </div>
