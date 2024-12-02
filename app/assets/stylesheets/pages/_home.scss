@@ -11,15 +11,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Espace entre le contenu et la barre de navigation */
-  padding: 20px;
+  justify-content: center;
+   /* Espace entre le contenu et la barre de navigation */
+
   text-align: center;
 }
 
 /* En-tête */
 .header {
   font-size: 1.2rem;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 .header .highlight {
@@ -30,7 +31,6 @@ body {
 /* Contenu principal */
 .content h1 {
   font-size: 2rem;
-  margin: 10px 0;
 }
 
 .content p {
@@ -58,6 +58,7 @@ body {
   background-color: #007bff;
   border-radius: 5px;
   text-decoration: none;
+
 }
 
 .btn:hover {
@@ -106,4 +107,5 @@ body {
     font-size: 1rem;
     padding: 10px 16px;
   }
+
 }
