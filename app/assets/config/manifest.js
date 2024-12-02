@@ -5,7 +5,3 @@
 //= link popper.js
 //= link bootstrap.min.js
 //= link manifest.json
-//= link animations/circle_animation.js
-//= link animations/bar_animation.js
-//= link animations.css
-//= link controllers/favorites_controller.js
