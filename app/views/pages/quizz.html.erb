@@ -1,13 +1,24 @@
-<%# app/views/pages/quizz.html.erb %>
-<h1>Quizz : <%= @journeys_document.document.title %></h1>
-<p><%= @question.text %></p>
+<div class="quiz-container">
+  <div class="header">
+    <h1>QUIZZ</h1>
+    <div class="user-icon">👤</div>
+  </div>
 
-<%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch do |form| %>
-  <% @question.answers.each do |answer| %>
-    <div class="form-check">
-      <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}" %>
-      <%= form.label "answer_#{answer.id}", answer.text %>
-    </div>
-  <% end %>
-  <%= form.submit "Soumettre la réponse", class: "btn btn-primary mt-3" %>
-<% end %>
+  <div class="quiz-content">
+    <%= image_tag "quiz_image.png", alt: "Quiz Time", class: "quiz-image" %>
+
+    <h2><%= @question.content %></h2>
+    <p>Une seule réponse à cocher</p>
+
+    <%= form_with url: submit_quizzes_path, method: :post, local: true do |f| %>
+      <% @answers.each do |answer| %>
+        <div class="answer-option">
+          <%= f.radio_button :answer_id, answer.id, id: "answer_#{answer.id}" %>
+          <%= f.label "answer_#{answer.id}", answer.content %>
+        </div>
+      <% end %>
+
+      <%= f.submit "Soumettre", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
