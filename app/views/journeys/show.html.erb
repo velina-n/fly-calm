@@ -20,23 +20,46 @@
             </div>
           </div>
 
+        </div>
+
+        <div class="image-section">
+          <%= image_tag "leonardo.png", alt:"Leonardo Image", class: "document-image"%>
+        </div>
+
+        <!-- Liste des contenus -->
+        <div class="content-list">
+
+
           <!-- Liste des contenus -->
+
           <% @journey_documents.each do |j_document| %>
             <% document = j_document.document %>
-            <%# enlever la phrase si on veut mettre des videos %>
-            <% unless document.kind == 'video' %>
               <div class="content-item">
-                <!-- Bloc de gauche : Titre -->
-                <div class="document-title">
-                  <% case document.kind %>
-                  <% when "article" %>
-                    <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
-                  <% when "audio" %>
-                    <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
-                  <% else %>
-                    <p>Type de contenu non pris en charge.</p>
-                  <% end %>
-                </div>
+                <%# enlever la phrase si on veut mettre des videos %>
+                <% unless document.kind == 'video' %>
+                  <!-- Bloc de gauche : Titre -->
+                  <div class="document-title">
+                    <% case document.kind %>
+                    <% when "article" %>
+                      <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
+                    <% when "audio" %>
+                      <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
+                    <% else %>
+                      <p>Type de contenu non pris en charge.</p>
+                    <% end %>
+                  </div>
+                <% else %>
+                  <!-- Gestion spécifique pour les vidéos -->
+                  <div class="document-title">
+                    <% case document.kind %>
+                    <% when "video" %>
+                      <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
+                    <% else %>
+                      <p>Type de contenu non pris en charge.</p>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
 
                 <!-- Bloc de droite : Icône de cœur -->
                 <div class="favorite-icon"
