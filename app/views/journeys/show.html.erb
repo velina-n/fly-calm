@@ -23,58 +23,66 @@
   <!-- Liste des contenus -->
   <div class="content-list">
     <!-- Liste des contenus -->
-
     <% @journey_documents.each do |j_document| %>
       <% document = j_document.document %>
       <div class="content-item">
-
-        <!-- Bloc de gauche : Titre -->
-        <div class="document-title">
-          <% case document.kind %>
-          <% when "article" %>
-            <%= link_to journeys_document_path(j_document), class: "article-title-link" do %>
+        <%# enlever la phrase si on veut mettre des videos %>
+        <% unless document.kind == 'video' %>
+          <!-- Bloc de gauche : Titre -->
+          <div class="document-title">
+            <% case document.kind %>
+            <% when "article" %>
               <%= image_tag "circle.svg", class: "verif_circle" %>
-              <h3 class="text-start"><%= document.title %></h3>
+              <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
+            <% when "audio" %>
+              <%= image_tag "circle.svg", class: "verif_circle" %>
+              <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
+            <% else %>
+              <p>Type de contenu non pris en charge.</p>
             <% end %>
-          <% when "video" %>
-            <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
-          <% when "audio" %>
-            <h3><%= link_to document.title, journeys_document_path(j_document), class: "audio-title-link" %></h3>
-          <% else %>
-            <p>Type de contenu non pris en charge.</p>
-          <% end %>
-        </div>
-
-        <!-- Bloc de droite : Icône de cœur -->
-        <div class="favorite-icon"
-            data-controller="favorites"
-            data-document-id="<%= document.id %>"
-            data-action="click->favorites#toggle">
-          <% if current_user.favorite_documents.include?(document) %>
-            <!-- Icône cœur rempli (favori) -->
-            <img src="<%= asset_path('icons/heart-filled.svg') %>"
-                alt="Heart Filled"
-                class="heart-filled"
-                data-favorites-target="heartFilled">
-            <!-- Icône cœur vide (non favori) -->
-            <img src="<%= asset_path('icons/heart-open.svg') %>"
-                alt="Heart Open"
-                class="heart-open hidden"
-                data-favorites-target="heartOpen">
-          <% else %>
-            <!-- Icône cœur rempli (favori) -->
-            <img src="<%= asset_path('icons/heart-filled.svg') %>"
-                alt="Heart Filled"
-                class="heart-filled hidden"
-                data-favorites-target="heartFilled">
-            <!-- Icône cœur vide (non favori) -->
-            <img src="<%= asset_path('icons/heart-open.svg') %>"
-                alt="Heart Open"
-                class="heart-open"
-                data-favorites-target="heartOpen">
-          <% end %>
-        </div>
+          </div>
+        <% else %>
+          <!-- Gestion spécifique pour les vidéos -->
+          <div class="document-title">
+            <% case document.kind %>
+            <% when "video" %>
+              <h3><%= link_to document.title, video_journeys_document_path(j_document), class: "btn btn-link" %></h3>
+            <% else %>
+              <p>Type de contenu non pris en charge.</p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <!-- Bloc de droite : Icône de cœur -->
+      <div class="favorite-icon"
+          data-controller="favorites"
+          data-document-id="<%= document.id %>"
+          data-action="click->favorites#toggle">
+        <% if current_user.favorite_documents.include?(document) %>
+          <!-- Icône cœur rempli (favori) -->
+          <img src="<%= asset_path('icons/heart-filled.svg') %>"
+              alt="Heart Filled"
+              class="heart-filled"
+              data-favorites-target="heartFilled">
+          <!-- Icône cœur vide (non favori) -->
+          <img src="<%= asset_path('icons/heart-open.svgg') %>"
+              alt="Heart Open"
+              class="heart-open hidden"
+              data-favorites-target="heartOpen">
+        <% else %>
+          <!-- Icône cœur rempli (favori) -->
+          <img src="<%= asset_path('icons/heart-filled.svg') %>"
+              alt="Heart Filled"
+              class="heart-filled hidden"
+              data-favorites-target="heartFilled">
+          <!-- Icône cœur vide (non favori) -->
+          <img src="<%= asset_path('icons/heart-open.svg') %>"
+              alt="Heart Open"
+              class="heart-open"
+              data-favorites-target="heartOpen">
+        <% end %>
       </div>
     <% end %>
   </div>
+
 </div>
