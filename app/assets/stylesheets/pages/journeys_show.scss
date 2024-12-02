@@ -117,24 +117,25 @@
           }
         }
 
+        /* Titre du document */
+        .document-title {
+          flex: 1; /* Prend tout l'espace disponible */
+          font-size: 16px;
+          font-weight: 500;
+          color: #333;
+        }
 
+        /* Icône de cœur */
+        .favorite-icon img {
+          width: 24px; /* Taille de l'icône */
+          height: 24px;
+          cursor: pointer; /* Curseur cliquable */
+        }
 
-/* Titre du document */
-.document-title {
-  flex: 1; /* Prend tout l'espace disponible */
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+        .hidden {
+          display: none !important; /* Masque complètement l'élément */
+        }
+      }
+    }
+  }
 }
-
-/* Icône de cœur */
-.favorite-icon img {
-  width: 24px; /* Taille de l'icône */
-  height: 24px;
-  cursor: pointer; /* Curseur cliquable */
-}
-
-.hidden {
-  display: none !important; /* Masque complètement l'élément */
-}
-
