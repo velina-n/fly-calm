@@ -1,0 +1,28 @@
+/* Conteneur principal pour chaque élément */
+.content-item {
+  display: flex; /* Flexbox pour aligner le titre et l'icône */
+  justify-content: space-between; /* Titre à gauche, icône à droite */
+  align-items: center; /* Aligne verticalement les éléments */
+  padding: 15px 10px; /* Espacement interne */
+  border-bottom: 1px solid #ddd; /* Ligne de séparation entre les éléments */
+}
+
+/* Titre du document */
+.document-title {
+  flex: 1; /* Prend tout l'espace disponible */
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Icône de cœur */
+.favorite-icon img {
+  width: 24px; /* Taille de l'icône */
+  height: 24px;
+  cursor: pointer; /* Curseur cliquable */
+}
+
+.hidden {
+  display: none !important; /* Masque complètement l'élément */
+}
+

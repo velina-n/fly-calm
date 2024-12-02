@@ -5,6 +5,20 @@ class PagesController < ApplicationController
   def splash
     # Action pour la page de démarrage
   end
+
+  # Action pour la page Se relaxer
+  def relaxer
+    # On récupère les programmes de la base de données
+  end
+
+  def calendly
+  # Action pour la page Calendly
+  end
+
+  def consulter
+    # Prendre un rendez-vous
+  end
+
   # Action pour afficher la page d'accueil
   def home
     # Si l'utilisateur est connecté, on affiche son prénom, sinon on invite à se connecter
