@@ -21,7 +21,7 @@
       <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/profile">Profile</a>
-        <a class="dropdown-item" data-turbo-method="delete" href="/logout">Log out</a>
+        <%=link_to "logout", destroy_user_session_path,data:{turbo_method: :delete}   %>
       </div>
     </div>
   </div>
