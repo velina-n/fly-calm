@@ -127,7 +127,9 @@
     color: #333;
     margin: 0 !important;
     display: flex;
-    align-items: left;
+    align-items: center !important;
+    justify-content: start;
+    gap: 10px;
     a {
       text-decoration: none;
     }
@@ -138,6 +140,8 @@
     width: 24px; /* Taille de l'icône */
     height: 24px;
     cursor: pointer; /* Curseur cliquable */
+    margin-top: -22px;
+    margin-right: -5px;
   }
 
   .hidden {
@@ -149,5 +153,6 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    text-align: left;
   }
 }
