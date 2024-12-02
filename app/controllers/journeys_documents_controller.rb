@@ -47,23 +47,19 @@ class JourneysDocumentsController < ApplicationController
 
   # Soumettre une réponse pour le quizz
   def answer
-    # Récupérer l'ID de la réponse sélectionnée depuis le formulaire
-    selected_answer_id = journeys_document_params[:answer_id]
+    selected_answer = Answer.find_by(id: params[:journeys_document][:answer_id])
 
-    # Logique pour traiter la réponse soumise (ici, uniquement affichage d'un message)
-    if selected_answer_id.present?
+    if selected_answer&.right
+      # Marque le quizz comme terminé pour une bonne réponse
       @journeys_document.quizz_done!
-      flash[:notice] = "Réponse soumise avec succès ! Vous avez choisi la réponse ##{selected_answer_id}."
+      flash[:notice] = "Bonne réponse !"
     else
-      flash[:alert] = "Aucune réponse sélectionnée."
+      # Ne marque pas le quizz comme terminé pour une mauvaise réponse
+      flash[:alert] = "Mauvaise réponse. Réessayez."
+      redirect_to request.referer and return
     end
 
-    if @journeys_document.journey.journeys_documents.quizz_done.count == @journeys_document.journey.journeys_documents.count
-      redirect_to congratulations_journey_path(@journeys_document.journey), notice: "Félicitations ! Vous avez terminé le programme."
-      return
-    end
-    # Rediriger vers le dashboard des documents (journeys#show)
-    redirect_to journey_path(@journeys_document.journey), notice: "Retour au dashboard des documents."
+    redirect_to journey_path(@journeys_document.journey)
   end
 
   private

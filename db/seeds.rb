@@ -3,7 +3,7 @@
 # Reset des données
 JourneysFear.destroy_all
 Journey.destroy_all
-User.destroy_all
+Favorite.destroy_all
 FearsDocument.destroy_all
 Fear.destroy_all
 Answer.destroy_all
@@ -11,7 +11,7 @@ Question.destroy_all
 Document.destroy_all
 JourneysDocument.destroy_all
 
-# # Création des utilisateurs
+# # # Création des utilisateurs
 # users = User.create!([
 #   { first_name: 'Antoine', last_name: 'Dupont', email: 'antoine@example.com', password: '123456' },
 #   { first_name: 'Clara', last_name: 'Martin', email: 'clara@example.com', password: '123456' }

@@ -43,7 +43,48 @@ article_4,Décris la situation problème,"Lorsque tu prends l’avion, tu commen
 article_4,Décris tes émotions,"La situation provoque une angoisse intense, la sensation de manquer de contrôle, accompagnée parfois de palpitations, de transpiration, voire d’un sentiment de panique. Tu te sens stressé, cela te donne envie de fuir la situation. "
 article_4,Prends conscience de tes pensées “catastrophe”,"Vous avez l’impression que quelque chose de grave va arriver. Votre esprit commence à imaginer le pire scénario possible : ""L’avion va s’écraser"", ""Je vais mourir"", ""Je n’arriverai jamais à gérer ça"". Ces pensées sont des interprétations erronées de la réalité."
 article_4,Mets en place des pensées plus réalistes,"Grâce aux TCC, vous pouvez apprendre à remplacer ces pensées catastrophiques par des pensées plus réalistes : ""Les accidents d’avion sont extrêmement rares"", ""Le personnel de bord est formé pour gérer toutes les situations"", ""Je suis en sécurité et tout va bien se passer"". En réévaluant la situation de manière rationnelle, l'anxiété diminue."
-article_5,Le fonctionnement du vol expliqué simplement 🛩️,"L'avion vole grâce à une combinaison de quatre forces principales :
+article_5,Des chiffres qui rassurent 📊,"Les chiffres parlent d’eux-mêmes, et ils sont là pour apaiser vos craintes 🤗 :
+
+- Chaque année, 37 millions de vols transportent environ 4,96 milliards de passagers. Et dans la plupart des cas, aucun décès n’est à déplorer. L’avion est sans doute l’un des endroits les plus sûrs au monde, où chaque détail est pensé pour garantir votre sécurité.
+- À côté de ça, les accidents de la route causent chaque année 1,2 million de décès et environ 50 millions de blessés ou handicapés.
+
+Alors, la prochaine fois que vous ressentez une montée de stress en avion, rappelez-vous : vous êtes bien plus en sécurité à 10 000 mètres d’altitude que sur le chemin pour rejoindre l’aéroport. 🚗"
+article_5,Pourquoi l’avion est-il si sûr 🛫 ?,"1. Une technologie de pointe :
+    
+    Les avions sont conçus pour être incroyablement robustes. Chaque composant est testé dans des conditions extrêmes, allant bien au-delà de ce qu’il rencontrera en vol. Les moteurs, par exemple, sont capables de fonctionner même en cas de défaillance d’un autre moteur.
+    
+2. Des contrôles rigoureux :
+    
+    Avant chaque vol, les avions passent par des inspections minutieuses. Des équipes au sol vérifient chaque détail, du fonctionnement des systèmes à la structure de l’appareil. En plus, chaque avion suit un programme de maintenance strict.
+    
+3. Des pilotes ultra-entraînés :
+    
+    Les pilotes ne sont pas seulement des conducteurs de luxe : ils sont formés pour gérer toutes les situations possibles, y compris les scénarios les plus improbables. Simulations de panne, formations régulières… ils sont prêts à tout.
+    
+4. Une surveillance constante :
+    
+    Le ciel est sous haute surveillance. Des contrôleurs aériens, assistés par des technologies avancées, suivent chaque avion à la trace pour garantir des vols en toute sécurité."
+article_5,Un système qui apprend de chaque incident 📚,"En aéronautique, chaque pépin, même minuscule, est traité comme une enquête. Toutes les données sont décortiquées pour comprendre ce qui s’est passé et trouver des moyens d’éviter que ça ne se reproduise.
+
+Contrairement aux accidents de la route (qu’on finit par accepter comme une fatalité), l’aviation adopte une approche super proactive. Ici, pas question de ""laisser passer"" : chaque détail compte pour rendre tes vols toujours plus sûrs. L’aviation, c’est l’élève modèle de la sécurité ! 👏"
+article_5,Pourquoi cette peur persiste 🤔 ?,"Eh bien, notre cerveau adore nous jouer des tours.
+
+1. Le biais des médias 🎥 :
+    
+    Les accidents d’avion, rares mais spectaculaires, font toujours la une. Pendant ce temps, personne ne parle des milliers de vols qui arrivent sans souci chaque jour. Résultat : ton cerveau se dit que l’avion est une machine à risques, alors qu’en vrai, c’est tout l’inverse.
+    
+2. Le manque de contrôle 🤷‍♂️ :
+    
+    Quand tu es dans un avion, c’est le pilote (et pas toi) qui a les manettes. Ça peut être stressant de laisser quelqu’un d’autre gérer la situation, même si cette personne est hyper qualifiée.
+    
+3. Le cerveau ancestral 🧠 :
+    
+    Pour nos ancêtres, voler n’était pas naturel. Du coup, ton cerveau primitif envoie des signaux d’alerte, même si, aujourd’hui, c’est hyper sécurisé.
+    
+4. Les sensations physiques 🚀 :
+    
+    Décollages, turbulences… Ton corps ressent des choses inhabituelles, et bam ! Ton cerveau les interprète comme des dangers, alors qu’en réalité, ce n’est qu’un peu d’air qui secoue l’avion."
+article_6,Le fonctionnement du vol expliqué simplement 🛩️,"L'avion vole grâce à une combinaison de quatre forces principales :
 
 1. La portance :
     
@@ -62,7 +103,7 @@ article_5,Le fonctionnement du vol expliqué simplement 🛩️,"L'avion vole gr
     Contrairement à ce qu’on pourrait penser, le poids de l’avion est un paramètre bien maîtrisé. Les ingénieurs calculent tout (carburant, passagers, bagages) pour que la portance dépasse toujours le poids total.
     
     Ces forces interagissent en permanence. Le pilote et les systèmes automatiques de l'avion contrôlent précisément ces équilibres pour maintenir un vol stable et sûr."
-article_5,Pourquoi l’avion est conçu pour rester en l’air 🛫 ?,"1. Les moteurs modernes :
+article_6,Pourquoi l’avion est conçu pour rester en l’air 🛫 ?,"1. Les moteurs modernes :
     
     Les avions de ligne utilisent des moteurs extrêmement puissants et fiables. Même si un moteur tombe en panne, l'avion peut voler avec un seul moteur et atterrir en toute sécurité.
     
@@ -73,7 +114,7 @@ article_5,Pourquoi l’avion est conçu pour rester en l’air 🛫 ?,"1. Les mo
 3. Les ailes sont faites pour flotter :
     
     Les ailes sont conçues pour générer de la portance en permanence, même à basse vitesse. En cas d'urgence, l’avion peut planer sur de longues distances avant d'atterrir même sans moteurs."
-article_5,Les idées reçues qui renforcent la peur 😨,"1. “L’avion est trop lourd pour voler” :
+article_6,Les idées reçues qui renforcent la peur 😨,"1. “L’avion est trop lourd pour voler” :
     
     Faux. Les lois de la physique et les calculs des ingénieurs garantissent que la portance dépasse toujours le poids de l’avion.
     
@@ -84,3 +125,30 @@ article_5,Les idées reçues qui renforcent la peur 😨,"1. “L’avion est tr
 3. “Si un moteur tombe en panne, c’est fini” :
     
     Faux. Les avions peuvent continuer à voler avec un seul moteur ou même planer sans moteur."
+article_7,Pourquoi avons-nous peur des turbulences 🌩️ ?,"Les turbulences activent souvent la peur car elles réveillent notre instinct de survie. Les mouvements imprévus et les bruits de l’avion peuvent nous donner l’impression de perdre le contrôle. Pourtant, pour les pilotes, ces secousses ne sont qu’un désagrément mineur.
+
+Les turbulences sont spectaculaires mais rares dans d’autres moyens de transport. Dans une voiture ou un train, on s’habitue aux bosses et secousses, mais en avion, elles nous semblent inhabituelles.
+
+Enfin, les médias contribuent à cette peur en surmédiatisant les incidents aériens, même les plus anecdotiques. Cela crée une perception biaisée et amplifie nos craintes."
+article_7,Comment se forment les turbulences 🌬️ ?,"Les turbulences se produisent lorsque l’air, qui semble souvent immobile à nos yeux, devient agité. Imaginez l’air comme un fleuve invisible : parfois calme, parfois rempli de courants et de remous. Les avions traversent ces remous, et cela se manifeste par des secousses.
+
+Voici les principales causes :
+
+- Les courants-jets : Ce sont des vents très puissants, pouvant atteindre 400 km/h, qui circulent à haute altitude. Lorsqu’un avion traverse leurs bordures, l’air devient instable.
+- Les orages et nuages : Les masses d’air chaud et froid qui se rencontrent près des orages provoquent une agitation visible. Même sans traverser un orage, l’avion peut ressentir cette instabilité en périphérie.
+- Le relief terrestre : En volant au-dessus de montagnes, les flux d’air peuvent être perturbés et provoquer des turbulences dites « orographiques ».
+- La turbulence en ciel clair (CAT) : La plus imprévisible, elle survient sans aucun signe visible, dans un ciel bleu, souvent près des courants-jets.
+
+Ces phénomènes sont naturels, inoffensifs et bien compris par les pilotes."
+article_7,Les turbulences : pas plus que 20 cm 📏 !,"Quand on est secoué en avion, on imagine parfois que l’appareil bouge dans tous les sens et que la situation est hors de contrôle. Pourtant, la réalité est beaucoup plus rassurante.
+
+En moyenne, les turbulences déplacent l’avion de seulement 20 cm en altitude. Oui, vous avez bien lu : 20 petits centimètres, soit à peu près la longueur d’une règle d’école. Pour comparaison, c’est bien moins que les mouvements d’une voiture sur une route un peu cabossée.
+
+Alors, pourquoi ces 20 cm semblent-ils si impressionnants ? C’est une question de perception. Le mouvement, amplifié par la hauteur à laquelle on se trouve et l’effet d’apesanteur ressenti, peut donner l’illusion d’un grand chaos. Mais du point de vue de l’avion, c’est comme si vous marchiez sur un sol légèrement irrégulier.
+
+En bref, la prochaine fois que vous sentez des secousses, souvenez-vous : c’est comme un petit cahot sur la route, rien de plus !"
+article_7,Pourquoi les turbulences ne sont pas dangereuses ✅ ?,"1. Une conception ultra-résistante : Les avions commerciaux sont conçus pour résister à des forces bien au-delà de celles rencontrées dans les pires turbulences. En fait, un avion peut supporter des turbulences 10 fois plus fortes que celles possibles dans l’atmosphère terrestre. La flexibilité des ailes, par exemple, leur permet d’absorber les forces sans dommage.
+2. Des pilotes parfaitement formés : Les pilotes savent non seulement détecter les turbulences grâce aux radars embarqués, mais ils sont aussi formés pour les éviter ou adapter leur vol. Si des turbulences sont inévitables, ils ajustent la vitesse ou l’altitude pour minimiser l’impact.
+3. Des mesures de précaution : Avant le vol, les compagnies aériennes reçoivent des informations détaillées sur les zones potentiellement turbulentes. Cela permet de planifier des itinéraires optimaux pour les éviter au maximum.
+4. Un mouvement souvent minime : Bien que ressenties comme de grandes secousses, les turbulences déplacent en réalité l’avion de seulement quelques dizaines de centimètres, en général autour de 20 cm. Ce mouvement est imperceptible pour la structure de l’avion, mais amplifié par notre perception interne.
+5. Un risque limité : Le seul danger des turbulences réside dans les objets ou passagers non attachés. C’est pour cette raison qu’on vous recommande de garder votre ceinture bouclée. Avec cette simple mesure, aucun risque !"
