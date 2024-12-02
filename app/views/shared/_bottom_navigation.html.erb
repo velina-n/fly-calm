@@ -1,37 +1,29 @@
 <%# app/views/shared/_bottom_navigation_html.erb %>
+<%# app/views/shared/_bottom_navigation.html.erb %>
 <footer class="bottom-navigation">
   <%= link_to home_path, class: "nav-item" do %>
-    <div class="icon">
-      <%= image_tag "home/nav-home.svg", alt: "Accueil" %>
-    </div>
+    <%= image_tag "home/nav-home.svg", alt: "Accueil", class: "icon" %>
     <span class="fw-bold">Accueil</span>
   <% end %>
 
   <%= link_to explorer_path, class: "nav-item" do %>
-    <div class="icon">
-      <%= image_tag "home/nav-explorer.svg", alt: "Explorer" %>
-    </div>
+    <%= image_tag "home/nav-explorer.svg", alt: "Explorer", class: "icon" %>
     <span class="fw-bold">Explorer</span>
   <% end %>
 
   <%= link_to consulter_path, class: "nav-item" do %>
-    <div class="icon">
-      <%= image_tag "home/nav-consulter.svg", alt: "Consulter" %>
-    </div>
+    <%= image_tag "home/nav-consulter.svg", alt: "Consulter", class: "icon" %>
     <span class="fw-bold">Consulter</span>
   <% end %>
 
   <%= link_to relaxer_path, class: "nav-item" do %>
-    <div class="icon">
-      <%= image_tag "home/nav-relaxation.svg", alt: "Se relaxer" %>
-    </div>
+    <%= image_tag "home/nav-relaxation.svg", alt: "Se relaxer", class: "icon" %>
     <span class="fw-bold">Se relaxer</span>
   <% end %>
 
   <%= link_to favoris_path, class: "nav-item" do %>
-    <div class="icon">
-      <%= image_tag "home/nav-favoris.svg", alt: "Favoris" %>
-    </div>
+    <%= image_tag "home/nav-favoris.svg", alt: "Favoris", class: "icon" %>
     <span class="fw-bold">Favoris</span>
   <% end %>
 </footer>
+

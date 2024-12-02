@@ -36,14 +36,15 @@
 /* Icon next to the text */
 .icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  background-color: #fff;
-  position: relative;
-  transition: all 0.3s ease;
+  width: auto; /* Permet à l'image de garder ses dimensions natives */
+  height: auto; /* Supprime la hauteur forcée */
+  border: none; /* Supprime la bordure */
+  background: none; /* Supprime l'arrière-plan */
+  border-radius: 0; /* Supprime la forme circulaire */
+  position: static; /* Annule la position relative */
+  transition: none; /* Désactive les transitions */
 }
+
 
 /* When the radio button is checked */
 .custom-radio:checked + .custom-label {
