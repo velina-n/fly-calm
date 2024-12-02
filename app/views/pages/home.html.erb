@@ -1,7 +1,7 @@
 <%# app/views/pages/home.html.erb %>
 <div class="home-page">
   <header class="header">
-    <h2>Bonjour <span class="highlight"><%= @user_name %></span> !</h2>
+    <h2 class="mb-4">Bonjour <span class="highlight"><%= @user_name %></span> !</h2>
   </header>
 
   <main class="content">
@@ -10,6 +10,6 @@
       <%= image_tag "home/homepage-photo.svg", alt: "Illustration de voyage" %>
     </div>
     <p>Transformons ensemble ta peur de l’avion en <span class="highlight">liberté</span> de voler.</p>
-    <%= link_to 'Commencer', new_journey_path, class: 'btn btn-primary' %>
+    <%= link_to 'Commencer', new_journey_path, class: 'btn btn-primary mt-4 mb-5' %>
   </main>
 </div>

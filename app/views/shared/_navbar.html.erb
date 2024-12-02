@@ -1,0 +1,28 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Bouton retour -->
+    <button class="btn-back" onclick="history.back()">
+      ←
+    </button>
+     <script>
+  function goBack() {
+    if (document.referrer) {
+      // Redirige vers la page précédente si possible
+      history.back();
+    } else {
+      // Redirige vers une page par défaut
+      window.location.href = '/'; // Change '/' avec l'URL de ta page d'accueil
+    }
+  }
+</script>
+
+    <!-- Dropdown avec avatar -->
+    <div class="dropdown">
+      <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/profile">Profile</a>
+        <a class="dropdown-item" data-turbo-method="delete" href="/logout">Log out</a>
+      </div>
+    </div>
+  </div>
+</div>
