@@ -1,27 +1,29 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Bouton retour -->
-    <button class="btn-back" onclick="history.back()">
-      ←
-    </button>
-     <script>
-  function goBack() {
-    if (document.referrer) {
-      // Redirige vers la page précédente si possible
-      history.back();
-    } else {
-      // Redirige vers une page par défaut
-      window.location.href = '/'; // Change '/' avec l'URL de ta page d'accueil
-    }
-  }
-</script>
+    <% unless request.path == home_path || request.path == new_journey_path %>
+      <button class="btn-back" onclick="history.back()">
+        ←
+      </button>
+    <% end %>
+    <script>
+      function goBack() {
+        if (document.referrer) {
+          // Redirige vers la page précédente si possible
+          history.back();
+        } else {
+          // Redirige vers une page par défaut
+          window.location.href = '/'; // Change '/' avec l'URL de ta page d'accueil
+        }
+      }
+    </script>
 
-    <!-- Dropdown avec avatar -->
-    <div class="dropdown">
+    <!-- Dropdown avec avatar aligné à droite -->
+    <div class="dropdown ms-auto">
       <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/profile">Profile</a>
-        <%=link_to "logout", destroy_user_session_path,data:{turbo_method: :delete}   %>
+        <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete } %>
       </div>
     </div>
   </div>
