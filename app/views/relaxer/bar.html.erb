@@ -1,6 +1,30 @@
-<%# app/views/relaxer/bar.html.erb %>
-<h1>Respiration Barre</h1>
-<div data-controller="bar-animation" class="breath-bar" style="width: 50px; background-color: #3498db; height: 200px; border-radius: 25px; overflow: hidden; position: relative;">
-  <div class="bubble" style="width: 40px; height: 40px; background: radial-gradient(circle, #4a90e2, #003366); border-radius: 50%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); transition: all 4s ease-in-out;"></div>
+<div class="container" data-controller="bar-animation">
+  <!-- Vue principale -->
+  <div class="main-view">
+    <h1>Relaxation en vol</h1>
+
+    <!-- Liste des modes -->
+    <div class="modes-container">
+      <button class="mode-button" data-inspiration="4" data-expiration="6">Décollage</button>
+      <button class="mode-button" data-inspiration="5" data-expiration="7">Turbulences</button>
+      <button class="mode-button" data-inspiration="6" data-expiration="6">Croisière</button>
+      <button class="mode-button" data-inspiration="3" data-expiration="5">Atterrissage</button>
+    </div>
+
+    <!-- Barre de respiration (présente dans la vue principale) -->
+    <div class="breath-bar">
+      <div class="bubble"></div>
+    </div>
+
+    <!-- Bouton pour démarrer -->
+    <button class="start-session" disabled>Commencer la séance</button>
+  </div>
+
+  <!-- Vue de focus -->
+  <div class="focus-view hidden">
+    <div class="breath-bar">
+      <div class="bubble"></div>
+    </div>
+    <button class="exit-session">Terminer</button>
+  </div>
 </div>
-<p>Suivez la barre qui monte et descend.</p>
