@@ -10,7 +10,3 @@ class JourneysDocument < ApplicationRecord
     document.correct_answer_id == answer_id
   end
 end
-
-class JourneysDocument < ApplicationRecord
-  has_one :quiz, dependent: :destroy
-end

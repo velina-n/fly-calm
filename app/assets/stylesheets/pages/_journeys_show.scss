@@ -44,11 +44,17 @@
     margin-bottom: 10px;
   }
 
+  .bg-yellow {
+    background-color: #ffe414 !important; /* Rose vif */
+}
+
+
   .progress {
     background-color: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
+    height: 15px !important; /* Taille de la barre */
 
     .progress-bar {
       font-size: 0.9rem;
