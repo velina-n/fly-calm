@@ -5,7 +5,7 @@
 
   <!-- Barre de progression -->
   <div class="progress" style="height: 20px;">
-    <div class="progress-bar bg-success" role="progressbar" style="width: <%= @progress %>%;" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"><%= @progress %>%</div>
+    <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @progress %>%;" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"><%= @progress %>%</div>
   </div>
 
   <div class="image-section">
@@ -24,7 +24,13 @@
           <div class="document-title">
             <% case document.kind %>
             <% when "article" %>
-              <%= image_tag "circle.svg", class: "verif_circle" %>
+              <% if j_document.status == "quizz_done" %>
+                <%# afficher l'icon "done" %>
+                <%= image_tag "checkjaune2.png", class: "check-jaune" %>
+              <% else %>
+                <%# affiche l'icon "pas done" %>
+                <%= image_tag "circle.svg", class: "verif_circle" %>
+              <% end %>
               <h3><%= link_to document.title, journeys_document_path(j_document), class: "article-title-link" %></h3>
             <% when "audio" %>
               <%= image_tag "circle.svg", class: "verif_circle" %>
