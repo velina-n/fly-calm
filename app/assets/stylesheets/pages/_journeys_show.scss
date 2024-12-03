@@ -65,7 +65,7 @@
       background-color: #fff;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
       border-radius: 8px;
-      padding: 20px 16px;
+      padding: 10px 16px;
       margin-bottom: 8px;
       transition: transform 0.2s, box-shadow 0.2s;
 
@@ -155,5 +155,17 @@
     align-items: center;
     text-align: left;
   }
-}
 
+  .check-jaune {
+    width: 40px;   // Vous pouvez ajuster la largeur comme nécessaire
+    height: 40px;  // Ajustez également la hauteur si nécessaire
+    object-fit: contain; // Cela permet de garder les proportions de l'image, si vous ne spécifiez qu'une dimension
+    margin-left: -10px;
+  }
+
+  .verif_circle {
+    width: 20px;   // Vous pouvez ajuster la largeur comme nécessaire
+    height: 20px;  // Ajustez également la hauteur si nécessaire
+    object-fit: contain; // Cela permet de garder les proportions de l'image, si vous ne spécifiez qu'une dimension
+  }
+}
