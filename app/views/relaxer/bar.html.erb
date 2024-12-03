@@ -1,4 +1,6 @@
-<%# app views relaxer bar.html.erb %>
+<%# app/views/relaxer/bar.html.erb %>
 <h1>Respiration Barre</h1>
-<div data-controller="bar-animation" class="breath-bar" style="width: 50px; background-color: #3498db; height: 200px;"></div>
+<div data-controller="bar-animation" class="breath-bar" style="width: 50px; background-color: #3498db; height: 200px; border-radius: 25px; overflow: hidden; position: relative;">
+  <div class="bubble" style="width: 40px; height: 40px; background: radial-gradient(circle, #4a90e2, #003366); border-radius: 50%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); transition: all 4s ease-in-out;"></div>
+</div>
 <p>Suivez la barre qui monte et descend.</p>

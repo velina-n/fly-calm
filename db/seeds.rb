@@ -27,8 +27,8 @@ Fear.create!(name: "Peur de paniquer", slug: 'panique')
 puts "creation des documents"
 Seed::SeedArticles.new.call
 
-puts "creation des videos"
-Seed::SeedVideos.new.call
+# puts "creation des videos"
+# Seed::SeedVideos.new.call
 
 puts "creation des sections"
 Seed::SeedSections.new.call
