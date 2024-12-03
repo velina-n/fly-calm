@@ -3,7 +3,7 @@
   <div class='row'>
     <div class='col'>
       <!-- Titre principal -->
-      <h1 class='document-title'><%= @document.title %></h1>
+      <h1 class='document-title'><%= @document.title.html_safe %></h1>
 
       <!-- Introduction -->
       <p><%= @document.intro %></p>
@@ -19,7 +19,7 @@
 
             <!-- Contenu de la section -->
             <div id="section-<%= index %>" class="collapse custom-collapse">
-              <p><%= section.content %></p>
+              <p><%= section.content.html_safe %></p>
             </div>
           </div>
         <% end %>
