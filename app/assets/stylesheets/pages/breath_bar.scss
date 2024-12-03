@@ -1,0 +1,21 @@
+/* app/assets/stylesheets/breath_bar.css */
+.breath-bar {
+  position: relative;
+  background-color: #002b55; /* Couleur de fond */
+  border-radius: 25px;
+  width: 50px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.breath-bar .bubble {
+  position: absolute;
+  bottom: 0; /* La bulle commence en bas */
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #4a90e2, #003366); /* Dégradé pour un effet réaliste */
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: all 6s ease-in-out; /* Animation fluide */
+}
