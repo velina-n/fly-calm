@@ -1,14 +1,23 @@
 <%# app views relaxer index.html.erb %>
-<h1>Choisissez une méthode de relaxation</h1>
-<div class="options">
-  <div class="option">
-    <h2>Respiration Cercle</h2>
-    <a href="/relaxer/circle" class="btn">Voir le cercle</a>
-  </div>
-  <div class="option">
-    <h2>Respiration Barre</h2>
-    <a href="/relaxer/bar" class="btn">Voir la barre</a>
+<div class="container relaxation-container">
+  <h1 class="fw-bold text-start">Choisissez une méthode de <span class="text-primary">relaxation</span></h1>
+
+  <img src="<%= asset_path('relaxation/relaxation.png') %>" alt="image relaxante" class="img-relaxation my-2">
+
+  <div class="options my-2">
+
+    <div class="option">
+      <h2 class="mt-2">Respiration Cercle</h2>
+
+      <img src="<%= asset_path('relaxation/fleur.png') %>" alt="circle" class="respiration-circle my-3">
+      <a href="/relaxer/circle" class="btn">commencer</a>
+    </div>
+
+    <div class="option">
+      <h2 class="mt-2">Respiration Barre</h2>
+      <img src=" <%= asset_path('relaxation/barre.png') %>" alt="barre" class="respiration-barre my-3">
+      <a href="/relaxer/bar" class="btn">commencer</a>
+    </div>
+
   </div>
 </div>
-
-
