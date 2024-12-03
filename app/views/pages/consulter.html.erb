@@ -1,12 +1,12 @@
 <%# app views pages consulter html erb %>
-<div class="sos-container">
+<div class="sos-container container">
   <div class="sos-header">
-    <h1 class="sos-title">
-      Une aide avec nos experts est <span class="available">disponible</span>
+    <h1 class="sos-title fw-bold">
+      Une aide avec nos experts est <span class="available text-primary">disponible</span>
     </h1>
   </div>
 
-  <div class="sos-image">
+  <div class="d-flex justify-content-center sos-image my-4">
     <img src="<%= asset_path('consulter/consulter.png') %>" alt="Aide avec nos experts" />
   </div>
 
@@ -15,10 +15,14 @@
     professionnels sont là pour vous accompagner à chaque étape.
   </p>
 
-  <div class="sos-buttons">
-    <a href="#" class="btn chat-btn">Discuter par chat</a>
-    <a href="<%= calendly_path %>" class="btn appointment-btn">
+  <div class="d-flex justify-content-center my-2">
+    <a href="#" class="btn sos-btn">Discuter par chat</a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <a href="<%= calendly_path %>" class="btn btn-help">
       Prendre rdv avec nos experts
     </a>
   </div>
+
 </div>

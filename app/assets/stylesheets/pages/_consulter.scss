@@ -11,6 +11,7 @@
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
 }
 
 .appointment-btn:hover {
@@ -23,4 +24,17 @@
   max-width: 600px;
   margin: 0 auto;
   border: none;
+}
+
+.sos-container {
+  min-height: 90vh;
+}
+
+.btn-help {
+  width: 100%;
+}
+
+.sos-btn {
+ background-color: #FFC727;
+  width: 100%;
 }
