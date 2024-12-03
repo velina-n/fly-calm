@@ -1,21 +1,34 @@
 <div class='container d-flex justify-content-center align-items-center'>
   <div class='row'>
     <div class='col'>
-      <h1>Quizz : <%= @journeys_document.document.title %></h1>
-      <p><%= @question.text %></p>
-      <%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, local: true do |form| %>
+    <%# Header dans une div class header %>
+      <h1>Quizz : Vous n’êtes pas <span class="highlight">seul</span> </h1>
+    <%#  %>
+
+    <%# Image %>
+  <div class="d-flex flex-column align-items-center mb-5 pb-4">
+    <%= image_tag("home/quizz.png", alt: "Image descriptive", class: "main-image") %>
+
+    <%# Description class: description-text pt-4 %>
+    <p class="description-text pt-4">
+      Combien de personnes  souffrent <br> de la peur de <span class="highlight"> l'avion </span>.
+    </p>
+    <%#  %>
+
+    <%# formulaire class: form-new-journey %>
+      <%= form_with url: answer_journeys_document_path(@journeys_document), method: :patch, class: "form-new-journey", local: true do |form| %>
         <% @question.answers.each do |answer| %>
-          <div class="form-check">
+          <div class="checkbox-group checkbox-item">
             <!-- Ajout de data-correct basé sur answer.right -->
-            <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}", name: "journeys_document[answer_id]", data: { correct: answer.right } %>
+            <%= form.radio_button :answer_id, answer.id, id: "answer_#{answer.id}", name: "journeys_document[answer_id]", data: { correct: answer.right }, class: "custom-checkbox" %>
             <%= form.label "answer_#{answer.id}", answer.text %>
             <!-- Span pour afficher la croix rouge -->
             <span id="feedback_<%= answer.id %>" class="feedback text-danger" style="display: none;">✖</span>
           </div>
         <% end %>
-        <%= form.submit "Soumettre la réponse", class: "btn btn-primary mt-3" %>
+        <%= form.submit "Soumettre la réponse", class: "btn btn-primary mt-4" %>
       <% end %>
     </div>
   </div>
+ </div>
 </div>
-

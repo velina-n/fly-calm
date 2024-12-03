@@ -5,8 +5,12 @@ class JourneysDocument < ApplicationRecord
 
   enum status: [:pending, :completed, :quizz_done]
   validates :position, presence: true
-  
+
   def correct_answer?(answer_id)
     document.correct_answer_id == answer_id
   end
+end
+
+class JourneysDocument < ApplicationRecord
+  has_one :quiz, dependent: :destroy
 end
