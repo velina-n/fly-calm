@@ -13,7 +13,7 @@
         <% @document.sections.each_with_index do |section, index| %>
           <div class="section" data-controller = "toggle-class" data-toggle-class-class-name-value="show">
             <!-- Titre de la section -->
-            <h2 class="section-title" data-bs-toggle="collapse" data-bs-target="#section-<%= index %>" data-turbo="false">
+            <h2 class="section-title mx-0" data-bs-toggle="collapse" data-bs-target="#section-<%= index %>" data-turbo="false">
               <%= section.title %>
             </h2>
 
