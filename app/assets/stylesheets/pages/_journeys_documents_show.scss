@@ -34,13 +34,14 @@ p {
 
 /* Titres des sections */
 .section-title {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   color: #457b9d; /* Bleu clair moderne */
-  padding: 15px;
-  margin: 0;
+  padding: 3px;
+  padding-left: 11px;
+  margin: 10px;
   border-bottom: none;
-  background-color: #f1faee; /* Fond clair */
+  background-color: #fff1c5; /* Fond clair */
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
